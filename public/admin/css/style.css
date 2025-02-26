@@ -24274,3 +24274,7 @@ span.light-logo img {
 li.delete i {
   color: white !important;
 }
+
+.file-drop-zone-title {
+  font-size: 1.2em !important;
+}

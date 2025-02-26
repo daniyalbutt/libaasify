@@ -214,7 +214,6 @@
 
     <script>
         deleteAttribute = (element, id) => {
-            alert("her")
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
