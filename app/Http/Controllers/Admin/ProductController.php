@@ -166,7 +166,6 @@ class ProductController extends Controller
             }
             $data = array_merge($data, ['images' => $productImages]);
         }
-
         $product->update($data);
         return response()->json(['status' => true]);
     }

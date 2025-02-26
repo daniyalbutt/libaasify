@@ -63,7 +63,7 @@
                                 {{ $data != null ? method_field('PUT') : method_field('POST') }}
                                 <div class="form-body">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Product Title</label>
 
@@ -77,7 +77,7 @@
                                             $category = App\Models\Category::all();
                                         @endphp
                                         <!--/span-->
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Category</label>
                                                 <select class="form-control" id="category_id" name="category_id"
@@ -92,8 +92,17 @@
                                                 <span id="categoryerror" class="d-none error-span "></span>
                                             </div>
                                         </div>
-
                                         <!--/span-->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="font-weight-700 font-size-16">SKU</label>
+
+                                                <input type="text" id="sku" name="sku"
+                                                    value="{{ $data == null ? old('sku') : $data->sku }}"
+                                                    class="form-control" placeholder="Product SKU">
+                                                <span id="sku" class="d-none error-span "></span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!--/row-->
                                     <!--/row-->
@@ -182,7 +191,7 @@
 
                                     <!--/row-->
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Featured Product</label>
                                                 <div class="radio-list">
@@ -202,12 +211,11 @@
                                                             <label for="featured_no">No</label>
                                                         </div>
                                                     </label>
-
                                                 </div>
                                             </div>
                                         </div>
                                         <!--/span-->
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Status</label>
                                                 <div class="radio-list">
@@ -232,6 +240,29 @@
                                             </div>
                                         </div>
                                         <!--/span-->
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="font-weight-700 font-size-16">New Product</label>
+                                                <div class="radio-list">
+                                                    <label class="radio-inline p-0 mr-10">
+                                                        <div class="radio radio-info">
+                                                            <input type="radio" name="new_product" id="new_product_yes"
+                                                                value="1"
+                                                                {{ $data != null ? ($data->new_product == 1 ? 'checked' : '') : '' }}>
+                                                            <label for="new_product_yes">Yes</label>
+                                                        </div>
+                                                    </label>
+                                                    <label class="radio-inline">
+                                                        <div class="radio radio-info">
+                                                            <input type="radio" name="new_product" id="new_product_no"
+                                                                value="0"
+                                                                {{ $data != null ? ($data->new_product == 0 ? 'checked' : '') : '' }}>
+                                                            <label for="new_product_no">No</label>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="row">

@@ -93,7 +93,7 @@ class CategoryController extends Controller
         if(routePermissionGiven('edit category'))
         {
             $data = Category::find($id);
-            $category = Category::where('parent_id', 0)->orderby('id', 'desc')->get();
+            $category = Category::orderby('id', 'desc')->get();
             return view('admin.category.create', compact('data', 'category'));
         }
 

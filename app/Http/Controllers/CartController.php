@@ -18,12 +18,16 @@ class CartController extends Controller
         return view('shop.shop', compact('products','category'));
     }
 
+	public function shopBySlug($slug){
+		$get_category = Category::where('slug', $slug)->first();
+        $products = Product::where('category_id', $get_category->id)->paginate(10);
+        $category = Category::all();
+        return view('shop.shop', compact('products','category', 'get_category'));
+    }
+
     public function detail($slug)
     {
         $product = Product::where('slug', $slug)->first();
-        
-
-        // dd($product);
         return view('shop.product_detail',compact('product'));
     }
 

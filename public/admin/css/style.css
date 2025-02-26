@@ -12445,7 +12445,8 @@ Height property
 .fixed .main-sidebar {
   position: fixed; }
 .fixed .content-wrapper {
-  padding-top: 80px; }
+  /* padding-top: 80px;  */
+}
 .fixed .right-side {
   padding-top: 80px; }
 
@@ -17718,16 +17719,18 @@ time {
   .product-text .pro-img-overlay {
     position: relative;
     display: block;
-    margin-top: -40px;
+    margin-top: 0;
     text-align: right; }
   .product-text .pro-price {
-    position: absolute;
-    text-align: center;
+    /* position: absolute; */
+    text-align: left;
     top: 20px;
     right: 5px;
     margin: 0;
     font-weight: 600;
-    padding: 0 10px; }
+    font-size: 20px;
+    /* padding: 0 10px; */
+  }
 
 .product-order.table tbody tr td {
   vertical-align: middle; }

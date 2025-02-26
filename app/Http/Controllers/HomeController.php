@@ -28,7 +28,7 @@ class HomeController extends Controller
         $trendingProducts = Product::where('trending',1)->get();
         $dealProducts = Product::where('deals',1)->get();
         $page = Page::where('slug','home')->first();
-        return view('welcome',compact('categories','trendingProducts','dealProducts','page'));
+        return view('welcome', compact('categories','trendingProducts','dealProducts','page'));
     }
 
     public function about()

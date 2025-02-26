@@ -43,9 +43,9 @@ class Category extends Model
 
     public function getParentsNames() {
 	    if($this->parent) {
-	        return $this->parent->getParentsNames(). " > " . $this->name;
+            return '<a href="#">'.$this->parent->getParentsNames().'</a>, <a href="#">'.$this->name.'</a>';
 	    } else {
-	        return $this->name;
+	        return '<a href="#">'.$this->name.'</a>';
 	    }
 	}
 

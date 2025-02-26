@@ -14,7 +14,7 @@ class Product extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $fillable = ['name', 'price', 'category_id', 'image', 'images', 'discount', 'slug', 'short_desc', 'description', 'featured', 'status', 'stock', 'trending', 'deals'];
+    protected $fillable = ['name', 'price', 'category_id', 'image', 'images', 'discount', 'slug', 'short_desc', 'description', 'featured', 'status', 'stock', 'trending', 'deals', 'sku', 'new_product'];
 
     /**
      * Get the product images path in json.
@@ -55,4 +55,14 @@ class Product extends Model
     {
         return $this->belongsToMany(User::class,'wishlists');
     }
+
+    public function percentageOff(){
+        if($this->discount != 0){
+            $percentage_price = number_format((($this->price/$this->discount) * 100) - 100);
+        }else{
+            $percentage_price = 0;
+        }
+        return $percentage_price;
+    }
+    
 }

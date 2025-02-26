@@ -144,6 +144,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' =>  ['auth', 'is
 
 Route::group(['as' => 'product.'], function () {
     Route::get('shop', [CartController::class, 'shop'])->name('shop');
+    Route::get('collections/{slug}', [CartController::class, 'shopBySlug'])->name('shop.slug');
     Route::get('product-detail/{slug}',[CartController::class, 'detail'])->name('detail');
     Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
     Route::post('payment',[CartController::class, 'payment'])->name('payment');

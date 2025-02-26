@@ -2489,17 +2489,21 @@ textarea.form-control {
       color: #8d8d8d; }
       .ps-shoe .ps-shoe__categories > a:hover {
         color: #2AC37D; }
-  .ps-shoe .ps-shoe__price {
-    display: inline-block;
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-family: "Archivo Narrow", sans-serif;
-    font-size: 20px;
-    color: #5b5b5b; }
+        .ps-shoe .ps-shoe__price {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          right: 10px;
+          font-family: "Archivo Narrow", sans-serif;
+          font-size: 20px;
+          color: #5b5b5b;
+      }
     .ps-shoe .ps-shoe__price del {
       font-size: 16px;
-      color: #bcbcbc; }
+      color: #bcbcbc;
+      display: block;
+      line-height: 10px;
+    }
   .ps-shoe .ps-shoe__favorite {
     position: absolute;
     top: 10px;
@@ -6543,4 +6547,9 @@ html .bg--parallax {
 .ps-product__column .ps-shoe__variant img {
     width: 50px;
     margin: 0px 4px;
+}
+
+.ps-badge.ps-badge--new {
+  right: 0;
+  left: auto;
 }

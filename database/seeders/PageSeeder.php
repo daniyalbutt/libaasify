@@ -16,6 +16,7 @@ class PageSeeder extends Seeder
     {
        Page::create([
         'name' => 'Home',
+        'image' => 'no-image'
        ]);
     }
 }

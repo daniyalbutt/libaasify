@@ -68,11 +68,10 @@
                                 </div>
                                 <div class="fx-card-content text-left mb-0">
                                     <div class="product-text">
-                                        <h4 class="box-title mb-0">{{ $product->name }}</h4>
+                                        <h4 class="box-title mb-0">{{ $product->name }} - {{ $product->sku }}</h4>
                                         <h2 class="pro-price text-blue">${{ $product->price }}</h2>
-
                                     </div>
-                                    <p class="text-muted db productdesc">{!! Str::limit($product->short_desc, 490) !!}</p>
+                                    <!-- <p class="text-muted db productdesc">{!! Str::limit($product->short_desc, 490) !!}</p> -->
                                 </div>
                             </div>
                         </div>

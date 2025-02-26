@@ -40,8 +40,9 @@
             <div class="navigation__column center">
                 <ul class="main-menu menu">
                     <li class="menu-item"><a href="{{ route('home') }}">Home</a></li>
+                    @foreach(\App\Models\Category::where('parent_id',0)->get() as $key => $value)
                     <li class="menu-item menu-item-has-children has-mega-menu">
-                        <a href="#">Men</a>
+                        <a href="#">{{ $value->name }}</a>
                         <div class="mega-menu">
                             <div class="mega-wrap">
                                 <div class="mega-column">
@@ -55,54 +56,21 @@
                                         <li><a href="product-listing.php">FAN GEAR</a></li>
                                     </ul>
                                 </div>
+                                @foreach($value->childs as $child_key => $child_value)
                                 <div class="mega-column">
-                                    <h4 class="mega-heading">Shoes</h4>
+                                    <h4 class="mega-heading">{{ $child_value->name }}</h4>
                                     <ul class="mega-item">
-                                        <li><a href="product-listing.php">All Shoes</a></li>
-                                        <li><a href="product-listing.php">Running</a></li>
-                                        <li><a href="product-listing.php">Training &amp; Gym</a></li>
-                                        <li><a href="product-listing.php">Basketball</a></li>
-                                        <li><a href="product-listing.php">Football</a></li>
-                                        <li><a href="product-listing.php">Soccer</a></li>
-                                        <li><a href="product-listing.php">Baseball</a></li>
+                                        <li><a href="">All Shoes</a></li>
+                                        @foreach($child_value->childs as $inner_child_key => $inner_child_value)
+                                        <li><a href="{{ route('product.shop.slug', ['slug' => $inner_child_value->slug]) }}">{{ $inner_child_value->name }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
-                                <div class="mega-column">
-                                    <h4 class="mega-heading">CLOTHING</h4>
-                                    <ul class="mega-item">
-                                        <li><a href="product-listing.php">Compression &amp; Nike Pro</a></li>
-                                        <li><a href="product-listing.php">Tops &amp; T-Shirts</a></li>
-                                        <li><a href="product-listing.php">Polos</a></li>
-                                        <li><a href="product-listing.php">Hoodies &amp; Sweatshirts</a></li>
-                                        <li><a href="product-listing.php">Jackets &amp; Vests</a></li>
-                                        <li><a href="product-listing.php">Pants &amp; Tights</a></li>
-                                        <li><a href="product-listing.php">Shorts</a></li>
-                                    </ul>
-                                </div>
-                                <div class="mega-column">
-                                    <h4 class="mega-heading">Accessories</h4>
-                                    <ul class="mega-item">
-                                        <li><a href="product-listing.php">Compression &amp; Nike Pro</a></li>
-                                        <li><a href="product-listing.php">Tops &amp; T-Shirts</a></li>
-                                        <li><a href="product-listing.php">Polos</a></li>
-                                        <li><a href="product-listing.php">Hoodies &amp; Sweatshirts</a></li>
-                                        <li><a href="product-listing.php">Jackets &amp; Vests</a></li>
-                                        <li><a href="product-listing.php">Pants &amp; Tights</a></li>
-                                        <li><a href="product-listing.php">Shorts</a></li>
-                                    </ul>
-                                </div>
-                                <div class="mega-column">
-                                    <h4 class="mega-heading">BRAND</h4>
-                                    <ul class="mega-item">
-                                        <li><a href="product-listing.php">NIKE</a></li>
-                                        <li><a href="product-listing.php">Adidas</a></li>
-                                        <li><a href="product-listing.php">Dior</a></li>
-                                        <li><a href="product-listing.php">B&amp;G</a></li>
-                                    </ul>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </li>
+                    @endforeach
                     <li class="menu-item"><a href="#">Women</a></li>
                     <li class="menu-item"><a href="#">Kids</a></li>
                     <li class="menu-item"><a href="blog-grid.php">Blogs</a></li>
