@@ -25,10 +25,11 @@ class CartController extends Controller
         return view('shop.shop', compact('products','category', 'get_category'));
     }
 
-    public function detail($slug)
+    public function detail($category, $slug)
     {
         $product = Product::where('slug', $slug)->first();
-        return view('shop.product_detail',compact('product'));
+		$data = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->limit(8)->orderBy('id', 'desc')->get();
+        return view('shop.product_detail',compact('product', 'data'));
     }
 
     public function checkout()

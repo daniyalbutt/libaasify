@@ -43,7 +43,7 @@
                                 <i class="ps-icon-heart"></i>
                             </a>
                             <img src="{{ asset($value->image) }}" alt="{{ $value->name }}">
-                            <a class="ps-shoe__overlay" href="product-detail.php"></a>
+                            <a class="ps-shoe__overlay" href="{{ route('product.detail', ['category' => $value->category->slug ,'slug' => $value->slug]) }}"></a>
                         </div>
                         <div class="ps-shoe__content">
                             <div class="ps-shoe__variants">
@@ -62,7 +62,7 @@
                                 </select>
                             </div>
                             <div class="ps-shoe__detail">
-                                <a class="ps-shoe__name" href="#">{{ $value->name }}</a>
+                                <a class="ps-shoe__name" href="{{ route('product.detail', ['category' => $value->category->slug ,'slug' => $value->slug]) }}">{{ $value->name }}</a>
                                 <p class="ps-shoe__categories">{!! $value->category->getParentsNames() !!}</p>
                                 <span class="ps-shoe__price">
                                     Rs. {{ $value->price }}

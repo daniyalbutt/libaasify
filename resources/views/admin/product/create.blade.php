@@ -17,8 +17,7 @@
     </div>
     <div class="box no-shadow box-bordered border-light">
         <h5 class="pro-img-head">Product Gallery</h5>
-        <input type="hidden" id="productimages"
-            value="{{ $data ? ($data->images ? json_encode($data->images) : '') : '' }}">
+        <input type="hidden" id="productimages" value="{{ $data ? ($data->images ? json_encode($data->images) : '') : '' }}">
         <div class="file-loading">
             <input id="image-file" name="input-ficons-5[]" multiple type="file">
         </div>
@@ -291,10 +290,138 @@
                                         </div>
                                     </div>
 
-                                    <div class="row no-gutters">
-                                        <div class="col-md-12">
-                                            <a id="addproatt" class="text-right">Add Product Attrbuites</a>
+                                    <hr>
 
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="variation-repeater" class="repeater">
+                                                <h5>Variation</h5>
+                                                <hr>
+                                                <div class="items" data-group="variation">
+                                                    @if ($data)
+                                                        @if ($data->variation->isNotEmpty())
+                                                            @foreach ($data->variation as $variation)
+                                                                @php
+                                                                    $attr = App\Models\AttributeValue::find(
+                                                                        $variation->pivot->attribute_value_id,
+                                                                    );
+                                                                
+                                                                @endphp
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-md-3 mb-3">
+                                                                            <label for="attrbuite">Attribute</label>
+                                                                            <input type="text" value="{{ $attr->attribute->name }}"
+                                                                                class="form-control" disabled>
+                                                                        </div>
+                                                                        <div class="col-md-3 mb-3">
+                                                                            <label for="attrbuite">Attribute Value</label>
+                                                                            <input type="text" value="{{ $attr->name }}"
+                                                                                class="form-control" disabled>
+                                                                        </div>
+
+                                                                        <div class="col-md-3 mb-3">
+                                                                            <label for="price">Addon</label>
+                                                                            <input type="number" step="0.01"
+                                                                                name="variation[addon][{{$variation->pivot->id}}]"
+                                                                                value="{{ $variation->pivot->addon }}"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                        <div class="col-md-3 mb-3">
+                                                                            <label for="stock">Stock</label>
+                                                                            <input type="number"
+                                                                                name="variation[stock][{{$variation->pivot->id}}]"
+                                                                                value="{{ $variation->pivot->stock }}"
+                                                                                class="form-control">
+                                                                        </div>
+                                                                        @if($variation->is_image == 1)
+                                                                        <div class="col-md-4">
+                                                                            <label for="image">Image</label>
+                                                                            <input type="file" name="variation[image][]"
+                                                                                value="{{ $variation->pivot->image }}"
+                                                                                class="dropify"
+                                                                                data-default-file="{{ asset($variation->pivot->image) }}"
+                                                                                disabled>
+
+                                                                        </div>
+                                                                        @endif
+
+                                                                        <div class="col-md-12">
+                                                                            <div
+                                                                                class="d-flex justify-content-end align-items-center h-full">
+                                                                                <button type="button"
+                                                                                    class="waves-effect waves-light btn btn-sm btn-rounded btn-primary-light mb-5 del"
+                                                                                    onclick="deleteVariation($(this).parent().parent().parent().parent(),{{ $variation->pivot->id }})">
+                                                                                    <i class="ti-trash"></i>
+                                                                                    Delete</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <hr>
+                                                            @endforeach
+                                                        @endif
+
+                                                    @endif
+                                                    <div class="repeater">
+                                                        <div class="items">
+                                                            <div class="form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 mb-3">
+                                                                        <label for="attrbuite">Attribute</label>
+                                                                        <select name="variation[attrbuite][]"
+                                                                            class="attr form-control select2"
+                                                                            onchange="attributeChange(this)" required>
+                                                                            <option value=null hidden selected>Select Attribute
+                                                                            </option>
+                                                                            @foreach ($attributes as $attribute)
+                                                                                <option value="{{ $attribute->id }}">
+                                                                                    {{ $attribute->name }}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-4 mb-3">
+                                                                        <label for="price">Attribute Value</label>
+                                                                        <select name="variation[attrbuite_values][]"
+                                                                            class="form-control select2">
+                                                                            <option value=null hidden>Select Attribute Value
+                                                                            </option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-4 mb-3">
+                                                                        <label for="price">Addon</label>
+                                                                        <input type="number" name="variation[addon][]"
+                                                                            step="0.01" value="0" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="col-md-4 dropify-wrapper-section">
+                                                                        <label for="image">Image</label>
+                                                                        <input type="file" name="variation[image][]"
+                                                                            class="dropify">
+                                                                    </div>
+                                                                    <div class="col-md-8 mb-3 variation-file-loading-col">
+                                                                        <label for="image">Gallery Images</label>
+                                                                        <div class="file-loading variation-file-loading">
+                                                                            <input id="variation-image-file" name="input-variation[]" class="variation-image-file" multiple type="file">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-3">
+                                                                        <div class="d-flex justify-content-center align-items-center h-full">
+                                                                            <button type="button"
+                                                                                class="waves-effect waves-light btn btn-sm btn-rounded btn-primary-light mb-5 del"
+                                                                                onclick="$(this).parent().parent().parent().remove()">
+                                                                                <i class="ti-trash"></i> Delete
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <button type="button" class="btn btn-primary repeater-add-btn">Add</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -395,11 +522,12 @@
                 };
             }
         }).on('filebatchselected', function(event, files) {
-
             $.each(files, function(index, value) {
                 formData.append('productgalleries[]', value['file'])
             });
         });
+
+        $(".variation-image-file").fileinput();
     </script>
     <script>
         $(document).ready(function() {
@@ -455,8 +583,62 @@
 
             });
 
-        })
-    </script>
+            $('.repeater .repeater-add-btn').click(function() {
+                var entryClone = $(this).siblings('.items').first().children().last().clone();
 
-    <script type="text/javascript"></script>
+                $(entryClone).find('.dropify-wrapper').remove();
+                var newFileInput = $('<input>', {
+                    type: 'file',
+                    class: 'dropify',
+                    name: 'variation[image][]'
+                });
+                $(entryClone).find('.dropify-wrapper-section').append(newFileInput);
+
+
+                $(this).siblings('.items').first().append(entryClone);
+
+                newFileInput.dropify({
+                    messages: {
+                        default: 'Drag and drop a file here or click',
+                        replace: 'Drag and drop or click to replace',
+                        remove: 'Remove',
+                        error: 'Ooops, something wrong happened.'
+                    }
+                });
+
+                $(entryClone).find('.select2-container').remove();
+                $(entryClone).find('.select2').removeClass('select2-hidden-accessible');
+                $('.select2').select2();
+            });
+
+        });
+
+        function attributeChange(elem) {
+            let value = $(elem).find(':selected').val();
+            let attr = $(elem).parent().next().find('select[name="variation[attrbuite_values][]"]');
+            $.ajax({
+                url: "{{ route('get.attributes') }}",
+                method: 'GET',
+                data: {
+                    value: value
+                },
+                success: function(response) {
+
+                    if (response.status) {
+                        attr.html('');
+                        response.data.forEach(item => {
+                            let option = new Option(item.name, item.id);
+                            attr.append(option);
+                        });
+                    } else {
+                        swal("ERROR!", "This attribute does not have attribute values", "error");
+                    }
+                },
+                error: function(xhr) {
+                    console.error('AJAX Error Response:', xhr.responseJSON);
+                    swal("ERROR!", "An error occurred while fetching attribute values", "error");
+                }
+            });
+        }
+    </script>
 @endpush

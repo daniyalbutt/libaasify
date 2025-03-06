@@ -121,7 +121,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'isAdmin']], functio
 
     //Attribute
     Route::resource('attribute', AttributeController::class);
-
+    Route::get('/get-attributes', [ProductController::class, 'attributes'])->name('get.attributes');
     //Delete Attribute Value
     Route::post('/product/delete-attribute-value', [AttributeController::class, 'deleteAttrValue'])->name('attribute.deleteAttrValue');
 
@@ -145,7 +145,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' =>  ['auth', 'is
 Route::group(['as' => 'product.'], function () {
     Route::get('shop', [CartController::class, 'shop'])->name('shop');
     Route::get('collections/{slug}', [CartController::class, 'shopBySlug'])->name('shop.slug');
-    Route::get('product-detail/{slug}',[CartController::class, 'detail'])->name('detail');
+Route::get('{category}/product/{slug}',[CartController::class, 'detail'])->name('detail');
     Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
     Route::post('payment',[CartController::class, 'payment'])->name('payment');
     Route::get('add-wishlist',[CartController::class,'addWishlist'])->name('Addwishlist');

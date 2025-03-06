@@ -10,6 +10,7 @@ use App\Http\Requests\ProductRequest;
 use DB;
 use File;
 use App\Models\Product;
+use App\Models\Attribute;
 
 class ProductController extends Controller
 {
@@ -66,7 +67,8 @@ class ProductController extends Controller
     public function create()
     {
         $data = null;
-        return view("admin.product.create", compact('data'));
+        $attributes = Attribute::all();
+        return view("admin.product.create", compact('data', 'attributes'));
     }
 
     /**
@@ -97,8 +99,40 @@ class ProductController extends Controller
                 array_push($productImages, 'uploads/products/' . $fileName);
             }
             $data = array_merge($data, ['images' => $productImages]);
-    }
+        }
         $product = Product::create($data);
+
+        if (!collect($request->variation)->map(function ($values) {
+            return collect($values)->filter(fn($value) => !is_null($value))->isEmpty();
+        })->contains(false)) {
+        return response()->json(['status' => false, 'message' => 'All values are null or empty.']);
+        } else {
+            if (!$this->hasNullValues($request->variation)) {
+                for ($i = 0; $i < count($request->variation['attrbuite_values']); $i++) {
+
+                    $attributeValue = $request->variation['attrbuite_values'][$i];
+                    if (!is_null($attributeValue)) {
+                        $data = [
+                            'addon' => $request->variation['addon'][$i] ?? null,
+                        ];
+                        if (isset($request->variation['image'][$i])) {
+                            $directory = public_path('uploads/pro-attr');
+                            if (!File::isDirectory($directory)) {
+                                File::makeDirectory($directory, 0777, true, true);
+                            }
+                            $fileName = time() . uniqid() . '.' . $request->variation['image'][$i]->extension();
+                            $request->variation['image'][$i]->move($directory, $fileName);
+                            $data['image'] = 'uploads/pro-attr/' . $fileName;
+                        }
+
+                        // Attach data to product variation
+                        $product->variation()->attach([
+                            $attributeValue => $data,
+                        ]);
+                    }
+                }
+            }
+        }
 
         return response()->json(['status' => true]);
     }
@@ -125,7 +159,8 @@ class ProductController extends Controller
         if (routePermissionGiven('edit product')) {
 
             $data = Product::find($id);
-            return view('admin.product.create', compact('data'));
+            $attributes = Attribute::all();
+            return view('admin.product.create', compact('data', 'attributes'));
         }
     }
 
@@ -167,6 +202,53 @@ class ProductController extends Controller
             $data = array_merge($data, ['images' => $productImages]);
         }
         $product->update($data);
+
+        if (!collect($request->variation)->map(function ($values) {
+            return collect($values)->filter(fn($value) => !is_null($value))->isEmpty();
+        })->contains(false)) {
+        // return response()->json(['status' => false, 'message' => 'All values are null or empty.']);
+        } else {
+            if (!$this->hasNullValues($request->variation)) {
+                for ($i = 0; $i < count($request->variation['attrbuite_values']); $i++) {
+
+                    $attributeValue = $request->variation['attrbuite_values'][$i];
+                    if (!is_null($attributeValue)) {
+                        $data = [
+                            'addon' => $request->variation['addon'][$i] ?? null,
+                        ];
+                        if (isset($request->variation['image'][$i])) {
+                            $directory = public_path('uploads/pro-attr');
+                            if (!File::isDirectory($directory)) {
+                                File::makeDirectory($directory, 0777, true, true);
+                            }
+                            $fileName = time() . uniqid() . '.' . $request->variation['image'][$i]->extension();
+                            $request->variation['image'][$i]->move($directory, $fileName);
+                            $data['image'] = 'uploads/pro-attr/' . $fileName;
+                        }
+
+                        // Attach data to product variation
+                        $product->variation()->attach([
+                            $attributeValue => $data,
+                        ]);
+                    }
+                }
+            }
+        }
+
+        $variation = $request->variation;
+
+        foreach ($variation as $key => $value) {
+            dump($key);
+            dump($value);
+            foreach($value as $inner_key => $inner_value){
+                DB::table('attribute_value_product')
+                    ->where('id', $inner_key)
+                    ->update([
+                        $key => $inner_value,
+                    ]);
+            }
+        }
+
         return response()->json(['status' => true]);
     }
 
@@ -215,5 +297,27 @@ class ProductController extends Controller
         }
         $product->update(['images' => $imagesArray]);
         return response()->json(['status' => true]);
+    }
+
+    public function attributes(Request $request){
+        $attribute = Attribute::find($request->value)->attrValues;
+        if ($attribute->isNotEmpty()) {
+            return response()->json(['status' => true, 'data' => $attribute]);
+        } else {
+            return response()->json(['status' => false, 'data' => []]);
+        }
+    }
+
+    public function hasNullValues(array $data): bool{
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                if ($this->hasNullValues($value)) {
+                    return true;
+                }
+            } elseif ($value === null || $value === "null") {
+                return true;
+            }
+        }
+        return false;
     }
 }

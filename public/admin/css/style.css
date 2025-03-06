@@ -24278,3 +24278,19 @@ li.delete i {
 .file-drop-zone-title {
   font-size: 1.2em !important;
 }
+
+.variation-file-loading-col .file-drop-zone.clearfix {
+    min-height: 191px;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.variation-file-loading-col .variation-file-loading {
+  border-radius: 0;
+}
+
+.variation-file-loading-col .file-preview {
+  padding: 0;
+  border-radius: 0;
+}

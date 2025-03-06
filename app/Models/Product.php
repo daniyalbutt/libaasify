@@ -64,5 +64,17 @@ class Product extends Model
         }
         return $percentage_price;
     }
+
+    public function variation(){
+        return $this->belongsToMany(AttributeValue::class,'attribute_value_product')->withPivot(['image','addon','id','stock']);
+    }
+
+    public function variation_by_name($name){
+        return $this->hasMany(AttributeValueProduct::class)->whereHas('get_attribute', function($q) use ($name){
+            $q->whereHas('attribute', function($a) use ($name){
+                $a->where('slug', $name);
+            });
+        });
+    }
     
 }
