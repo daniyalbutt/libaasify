@@ -323,26 +323,32 @@
                                                                         <div class="col-md-3 mb-3">
                                                                             <label for="price">Addon</label>
                                                                             <input type="number" step="0.01"
-                                                                                name="variation[addon][{{$variation->pivot->id}}]"
+                                                                                name="old_variation[addon][{{$variation->pivot->id}}]"
                                                                                 value="{{ $variation->pivot->addon }}"
                                                                                 class="form-control">
                                                                         </div>
                                                                         <div class="col-md-3 mb-3">
                                                                             <label for="stock">Stock</label>
                                                                             <input type="number"
-                                                                                name="variation[stock][{{$variation->pivot->id}}]"
+                                                                                name="old_variation[stock][{{$variation->pivot->id}}]"
                                                                                 value="{{ $variation->pivot->stock }}"
                                                                                 class="form-control">
                                                                         </div>
-                                                                        @if($variation->is_image == 1)
+                                                                        @if($attr->attribute->is_image == 1)
                                                                         <div class="col-md-4">
                                                                             <label for="image">Image</label>
-                                                                            <input type="file" name="variation[image][]"
+                                                                            <input type="file" name="old_variation[image][]"
                                                                                 value="{{ $variation->pivot->image }}"
                                                                                 class="dropify"
                                                                                 data-default-file="{{ asset($variation->pivot->image) }}"
                                                                                 disabled>
 
+                                                                        </div>
+                                                                        <div class="col-md-8 mb-3 variation-file-loading-col">
+                                                                            <label for="image">Gallery Images</label>
+                                                                            <div class="">
+                                                                                <input name="old_variation[gallery][{{$variation->pivot->id}}][]" data-images="{{ $variation->pivot->images }}" class="old-variation-image-file" multiple type="file">
+                                                                            </div>
                                                                         </div>
                                                                         @endif
 
@@ -368,7 +374,7 @@
                                                         <div class="items">
                                                             <div class="form-group">
                                                                 <div class="row">
-                                                                    <div class="col-md-4 mb-3">
+                                                                    <div class="col-md-3 mb-3">
                                                                         <label for="attrbuite">Attribute</label>
                                                                         <select name="variation[attrbuite][]"
                                                                             class="attr form-control select2"
@@ -381,7 +387,7 @@
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
-                                                                    <div class="col-md-4 mb-3">
+                                                                    <div class="col-md-3 mb-3">
                                                                         <label for="price">Attribute Value</label>
                                                                         <select name="variation[attrbuite_values][]"
                                                                             class="form-control select2">
@@ -389,11 +395,17 @@
                                                                             </option>
                                                                         </select>
                                                                     </div>
-                                                                    <div class="col-md-4 mb-3">
+                                                                    <div class="col-md-3 mb-3">
                                                                         <label for="price">Addon</label>
                                                                         <input type="number" name="variation[addon][]"
                                                                             step="0.01" value="0" class="form-control" required>
                                                                     </div>
+                                                                    <div class="col-md-3 mb-3">
+                                                                            <label for="stock">Stock</label>
+                                                                            <input type="number"
+                                                                                name="variation[stock][]"
+                                                                                class="form-control" value="0">
+                                                                        </div>
                                                                     <div class="col-md-4 dropify-wrapper-section">
                                                                         <label for="image">Image</label>
                                                                         <input type="file" name="variation[image][]"
@@ -402,14 +414,14 @@
                                                                     <div class="col-md-8 mb-3 variation-file-loading-col">
                                                                         <label for="image">Gallery Images</label>
                                                                         <div class="file-loading variation-file-loading">
-                                                                            <input id="variation-image-file" name="input-variation[]" class="variation-image-file" multiple type="file">
+                                                                            <input id="variation-image-file" name="variation[gallery][0][]" class="variation-image-file" multiple type="file">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-3">
                                                                         <div class="d-flex justify-content-center align-items-center h-full">
                                                                             <button type="button"
                                                                                 class="waves-effect waves-light btn btn-sm btn-rounded btn-primary-light mb-5 del"
-                                                                                onclick="$(this).parent().parent().parent().remove()">
+                                                                                onclick="deleteRepeatVariation($(this))">
                                                                                 <i class="ti-trash"></i> Delete
                                                                             </button>
                                                                         </div>
@@ -443,6 +455,7 @@
 @endsection
 
 @push('css')
+
     <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all"
         rel="stylesheet" type="text/css" />
 
@@ -469,12 +482,12 @@
 @endpush
 
 @push('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css"
         crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/js/fileinput.min.js"></script>
     <script>
         var productImages = $('#productimages').val().length > 0 ? JSON.parse($('#productimages').val()) : []
-        console.log(productImages);
         var urls = [],
             initialPreviewConfig = [],
             initialPreviewAsData = false;
@@ -583,7 +596,10 @@
 
             });
 
+            var gallery_counter = 0;
+
             $('.repeater .repeater-add-btn').click(function() {
+                gallery_counter++;
                 var entryClone = $(this).siblings('.items').first().children().last().clone();
 
                 $(entryClone).find('.dropify-wrapper').remove();
@@ -609,6 +625,17 @@
                 $(entryClone).find('.select2-container').remove();
                 $(entryClone).find('.select2').removeClass('select2-hidden-accessible');
                 $('.select2').select2();
+
+                $(entryClone).find('.file-input').remove();
+                var newGalleryInput = $('<input>', {
+                    type: 'file',
+                    class: 'variation-image-file',
+                    name: 'variation[gallery]['+gallery_counter+'][]',
+                    multiple: 'multiple'
+                });
+                $(entryClone).find('.variation-file-loading-col').append(newGalleryInput);
+                newGalleryInput.fileinput();
+
             });
 
         });
@@ -638,6 +665,57 @@
                     console.error('AJAX Error Response:', xhr.responseJSON);
                     swal("ERROR!", "An error occurred while fetching attribute values", "error");
                 }
+            });
+        }
+
+        function deleteRepeatVariation(a){
+            $(a).parent().parent().parent().remove();
+            $('.variation-image-file').each(function(a, b){
+                console.log($(this).attr('name', 'variation[gallery]['+a+'][]'));
+            });
+            gallery_counter = $('.variation-image-file').length - 1;
+        }
+
+        if($('.old-variation-image-file').length != 0){
+            $('.old-variation-image-file').each(function(){
+                var get_images = $(this).data('images');
+                var urls = [],
+                initialPreviewConfig = [],
+                initialPreviewAsData = false;
+                if (Object.keys(get_images).length > 0) {
+                    get_images.forEach(function(obj, index) {
+                        urls.push(window.location.origin + '/' + obj);
+                        initialPreviewConfig.push({
+                            caption: obj.split('/').slice(-1)[0],
+                            downloadUrl: window.location.origin + '/' + obj,
+                            extra: {
+                                _token: $('meta[name="csrf-token"]').attr('content'),
+                                path: obj
+                            }
+                        });
+                    });
+                    initialPreviewAsData = true
+                }
+
+                $(this).fileinput({
+                    showUpload: false,
+                    theme: 'fa',
+                    initialPreview: urls,
+                    initialPreviewAsData: initialPreviewAsData,
+                    initialPreviewConfig: initialPreviewConfig,
+                    uploadAsync: false,
+                    browseOnZoneClick: true,
+                    initialPreviewShowDelete: true,
+                    dropZoneEnabled: true,
+                    overwriteInitial: false,
+                    maxFileSize: 20000000,
+                    maxFilesNum: 20,
+                    uploadExtraData: function() {
+                        return {
+                            created_at: $('.created_at').val()
+                        };
+                    }
+                })
             });
         }
     </script>

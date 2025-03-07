@@ -66,7 +66,7 @@ class Product extends Model
     }
 
     public function variation(){
-        return $this->belongsToMany(AttributeValue::class,'attribute_value_product')->withPivot(['image','addon','id','stock']);
+        return $this->belongsToMany(AttributeValue::class,'attribute_value_product')->withPivot(['image','addon','id','stock', 'images']);
     }
 
     public function variation_by_name($name){

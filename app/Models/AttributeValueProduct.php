@@ -19,6 +19,12 @@ class AttributeValueProduct extends Model
 
     protected $guarded = [];
 
+    
+    public function setImagesAttribute($value)
+    {
+        return $this->attributes['images'] = json_encode($value);
+    }
+
     public function get_attribute(){
         return $this->belongsTo(AttributeValue::class, 'attribute_value_id');
     }

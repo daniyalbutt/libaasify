@@ -173,7 +173,6 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, $id)
     {
-
         $request->validated();
 
         $product = Product::find($id);
@@ -226,6 +225,16 @@ class ProductController extends Controller
                             $data['image'] = 'uploads/pro-attr/' . $fileName;
                         }
 
+                        if (isset($request->variation['gallery'][$i])) {
+                            $productImages = [];
+                            foreach($request->variation['gallery'][$i] as $key => $value){
+                                $fileName = time() . '_' . strval($key + 1) . '.' . $value->extension();
+                                $value->move(public_path('uploads/pro-attr/'), $fileName);
+                                array_push($productImages, 'uploads/pro-attr/' . $fileName);
+                            }
+                            $data = array_merge($data, ['images' => json_encode($productImages)]);
+                        }
+
                         // Attach data to product variation
                         $product->variation()->attach([
                             $attributeValue => $data,
@@ -235,11 +244,9 @@ class ProductController extends Controller
             }
         }
 
-        $variation = $request->variation;
+        $variation = $request->old_variation;
 
         foreach ($variation as $key => $value) {
-            dump($key);
-            dump($value);
             foreach($value as $inner_key => $inner_value){
                 DB::table('attribute_value_product')
                     ->where('id', $inner_key)
