@@ -118,6 +118,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'isAdmin']], functio
 
     //Delete Productimage
     Route::post('/product/delete-image', [ProductController::class, 'deleteImages'])->name('product.delete_img');
+    Route::post('/product/attribute/delete-image', [ProductController::class, 'deleteImagesAttribute'])->name('product_attribute.delete_img');
+    Route::post('/product/attribute/update-image/{id}', [ProductController::class, 'updateImagesAttribute'])->name('product.attribute_image.update');
 
     //Attribute
     Route::resource('attribute', AttributeController::class);

@@ -11,6 +11,7 @@ use DB;
 use File;
 use App\Models\Product;
 use App\Models\Attribute;
+use App\Models\AttributeValueProduct;
 
 class ProductController extends Controller
 {
@@ -171,6 +172,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function updateImagesAttribute(Request $request, $id){
+        $product = AttributeValueProduct::find($id);
+        $imagesArray = json_decode($product->images);
+
+        $old_variation = $request->old_variation['gallery'];
+        $index = 0;
+        foreach($old_variation as $key => $value){
+            $fileName =  time() . '.' . $value[$index]->extension();
+            $value[$index]->move(public_path('uploads/products'), $fileName);
+            array_push($imagesArray, 'uploads/products/' . $fileName);
+            $product->update(['images' => $imagesArray]);
+            $index++;
+        }
+        return response()->json(['status' => true]);
+    }
+
     public function update(ProductRequest $request, $id)
     {
         $request->validated();
@@ -299,6 +317,19 @@ class ProductController extends Controller
         }
         $product = Product::find($request->input('key'));
         $imagesArray = $product->images;
+        if (($key = array_search($request->input('path'), $imagesArray)) !== false) {
+            unset($imagesArray[$key]);
+        }
+        $product->update(['images' => $imagesArray]);
+        return response()->json(['status' => true]);
+    }
+
+    public function deleteImagesAttribute(Request $request){
+        if (File::exists(public_path($request->input('path')))) {
+            File::delete(public_path($request->input('path')));
+        }
+        $product = AttributeValueProduct::find($request->key);
+        $imagesArray = json_decode($product->images);
         if (($key = array_search($request->input('path'), $imagesArray)) !== false) {
             unset($imagesArray[$key]);
         }

@@ -347,7 +347,7 @@
                                                                         <div class="col-md-8 mb-3 variation-file-loading-col">
                                                                             <label for="image">Gallery Images</label>
                                                                             <div class="">
-                                                                                <input name="old_variation[gallery][{{$variation->pivot->id}}][]" data-images="{{ $variation->pivot->images }}" class="old-variation-image-file" multiple type="file">
+                                                                                <input name="old_variation[gallery][{{$variation->pivot->id}}][]" data-images="{{ $variation->pivot->images }}" class="old-variation-image-file" data-id="{{ $variation->pivot->id }}" multiple type="file">
                                                                             </div>
                                                                         </div>
                                                                         @endif
@@ -679,6 +679,8 @@
         if($('.old-variation-image-file').length != 0){
             $('.old-variation-image-file').each(function(){
                 var get_images = $(this).data('images');
+                console.log(get_images);
+                var get_id = $(this).data('id');
                 var urls = [],
                 initialPreviewConfig = [],
                 initialPreviewAsData = false;
@@ -688,6 +690,8 @@
                         initialPreviewConfig.push({
                             caption: obj.split('/').slice(-1)[0],
                             downloadUrl: window.location.origin + '/' + obj,
+                            url: "{{ route('product_attribute.delete_img') }}",
+                            key: get_id,
                             extra: {
                                 _token: $('meta[name="csrf-token"]').attr('content'),
                                 path: obj
@@ -697,7 +701,11 @@
                     initialPreviewAsData = true
                 }
 
+                var store_url = '{{ route("product.attribute_image.update", ":id") }}';
+                store_url = store_url.replace(':id', get_id);
+
                 $(this).fileinput({
+                    uploadUrl: store_url,
                     showUpload: false,
                     theme: 'fa',
                     initialPreview: urls,
@@ -712,7 +720,8 @@
                     maxFilesNum: 20,
                     uploadExtraData: function() {
                         return {
-                            created_at: $('.created_at').val()
+                            created_at: $('.created_at').val(),
+                            _token: $('meta[name="csrf-token"]').attr('content'),
                         };
                     }
                 })
