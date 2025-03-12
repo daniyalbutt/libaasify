@@ -10,8 +10,6 @@
             <input type="file" class="dropify" name="image"
                 {{ $data != null ? 'data-default-file = ' . asset($data->image) : '' }}>
             <span id="imageerror" class="d-none error-span "></span>
-
-
         </div>
 
     </div>
@@ -151,7 +149,7 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Trending Product</label>
                                                 <div class="input-group">
@@ -169,7 +167,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Deal</label>
                                                 <div class="input-group">
@@ -184,6 +182,20 @@
                                                     </select>
                                                     <span id="dealerror" class="d-none error-span "></span>
                                                 </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="font-weight-700 font-size-16">Default Color</label>
+                                                <select class="form-control" id="default_color" name="default_color" tabindex="1">
+                                                    <option value="">Select Default Color</option>
+                                                    @foreach($attribute_value as $key => $value)
+                                                    <option value="{{ $value->name }}"
+                                                        {{ $data != null ? ($data->default_color == $value->name ? 'selected' : '') : '' }}
+                                                    >{{ $value->name }}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -555,6 +567,9 @@
                 if ($('.dropify')[0].files[0]) {
                     productForm.append('image', $('.dropify')[0].files[0])
                 }
+
+                console.log(productForm);
+                
                 $.ajax({
 
                     xhr: function() {

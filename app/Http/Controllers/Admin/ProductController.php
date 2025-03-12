@@ -11,6 +11,7 @@ use DB;
 use File;
 use App\Models\Product;
 use App\Models\Attribute;
+use App\Models\AttributeValue;
 use App\Models\AttributeValueProduct;
 
 class ProductController extends Controller
@@ -69,7 +70,11 @@ class ProductController extends Controller
     {
         $data = null;
         $attributes = Attribute::all();
-        return view("admin.product.create", compact('data', 'attributes'));
+        $attribute_value = AttributeValue::whereHas('attribute', function($q){
+            $q->where('slug', 'color');
+        })->get();
+        dd($attribute_value);
+        return view("admin.product.create", compact('data', 'attributes', 'attribute_value'));
     }
 
     /**
@@ -161,7 +166,10 @@ class ProductController extends Controller
 
             $data = Product::find($id);
             $attributes = Attribute::all();
-            return view('admin.product.create', compact('data', 'attributes'));
+            $attribute_value = AttributeValue::whereHas('attribute', function($q){
+                $q->where('slug', 'color');
+            })->get();
+            return view('admin.product.create', compact('data', 'attributes', 'attribute_value'));
         }
     }
 
@@ -197,7 +205,6 @@ class ProductController extends Controller
         $data = $request->except(['image', '_token', 'gallery', '_method']);
 
         if ($request->hasFile('image')) {
-
             if (File::exists(public_path($product->image))) {
                 File::delete(public_path($product->image));
             }

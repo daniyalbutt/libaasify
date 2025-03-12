@@ -48,10 +48,10 @@
                         <div class="ps-shoe__content">
                             <div class="ps-shoe__variants">
                                 <div class="ps-shoe__variant normal">
-                                    <img src="images/shoe/2.jpg" alt="">
-                                    <img src="images/shoe/3.jpg" alt="">
-                                    <img src="images/shoe/4.jpg" alt="">
-                                    <img src="images/shoe/5.jpg" alt="">
+                                    <img src="{{ asset($value->image) }}" alt="{{ $value->default_color }}">
+                                    @foreach($value->variation_by_name('color')->get() as $var_key => $var_value)
+                                    <img src="{{ asset($var_value->image) }}" alt="{{ $var_value->get_attribute->name }}">
+                                    @endforeach
                                 </div>
                                 <select class="ps-rating ps-shoe__rating">
                                     <option value="1">1</option>
