@@ -28,8 +28,7 @@ class CartController extends Controller
     public function detail($category, $slug)
     {
         $product = Product::where('slug', $slug)->first();
-		// $data = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->limit(8)->orderBy('id', 'desc')->get();
-		$data = Product::where('category_id', $product->category_id)->limit(8)->orderBy('id', 'desc')->get();
+		$data = Product::where('id', '!=', $product->id)->where('category_id', $product->category_id)->limit(8)->orderBy('id', 'desc')->get();
         return view('shop.product_detail',compact('product', 'data'));
     }
 
