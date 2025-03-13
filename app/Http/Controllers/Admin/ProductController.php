@@ -219,11 +219,11 @@ class ProductController extends Controller
             $fileName =  $get_time . '.' . $image->extension();
             $image->move($destinationPathThumbnail, $fileName);
 
-            $img = Image::read($image->path());
-            $imageName = '55x55-'.$get_time.'.'.$image->extension();
-            $img->resize(55, 55, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save($destinationPathThumbnail.'/'.$imageName);
+            // $img = Image::read($image->path());
+            // $imageName = '55x55-'.$get_time.'.'.$image->extension();
+            // $img->resize(55, 55, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // })->save($destinationPathThumbnail.'/'.$imageName);
 
             $data = array_merge($data, ['image' => 'uploads/products/' . $fileName]);
         }
