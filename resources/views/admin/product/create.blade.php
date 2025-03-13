@@ -7,7 +7,7 @@
 
 
         <div class="form-group box-footer">
-            <input type="file" class="dropify" name="image"
+            <input type="file" class="dropify" name="image" id="main_image"
                 {{ $data != null ? 'data-default-file = ' . asset($data->image) : '' }}>
             <span id="imageerror" class="d-none error-span "></span>
         </div>
@@ -564,8 +564,8 @@
                     productForm.append('gallery[]', value)
                 });
 
-                if ($('.dropify')[0].files[0]) {
-                    productForm.append('image', $('.dropify')[0].files[0])
+                if ($('#main_image')[0].files[0]) {
+                    productForm.append('image', $('#main_image')[0].files[0])
                 }
 
                 console.log(productForm);
