@@ -13,6 +13,7 @@ use App\Models\Product;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
 use App\Models\AttributeValueProduct;
+use Intervention\Image\Laravel\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -200,18 +201,30 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $id)
     {
         $request->validated();
-
         $product = Product::find($id);
+
         $data = $request->except(['image', '_token', 'gallery', '_method']);
 
         if ($request->hasFile('image')) {
             if (File::exists(public_path($product->image))) {
                 File::delete(public_path($product->image));
             }
-
+            if (File::exists(public_path('55x55-'.$product->image))) {
+                File::delete(public_path('55x55-'.$product->image));
+            }
+            $destinationPathThumbnail = public_path('uploads/products');
             File::isDirectory(public_path('uploads/products')) or File::makeDirectory(public_path('uploads/products'), 0777, true, true);
-            $fileName =  time() . '.' . $request->image->extension();
-            $request->image->move(public_path('uploads/products'), $fileName);
+            $get_time = time();
+            $image = $request->file('image');
+            $fileName =  $get_time . '.' . $image->extension();
+            $image->move($destinationPathThumbnail, $fileName);
+
+            // $img = Image::read($image->path());
+            // $imageName = '55x55-'.$get_time.'.'.$image->extension();
+            // $img->resize(55, 55, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // })->save($destinationPathThumbnail.'/'.$imageName);
+
             $data = array_merge($data, ['image' => 'uploads/products/' . $fileName]);
         }
         if ($request->hasFile('gallery')) {
