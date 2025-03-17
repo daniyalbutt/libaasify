@@ -3,7 +3,12 @@
 <main class="ps-main">
     <div class="ps-checkout pt-80 pb-80">
         <div class="ps-container">
-            <form class="ps-checkout__form" action="do_action" method="post">
+            <form class="ps-checkout__form form-horizontal" action="do_action" method="post" id="order-place" role="form" action="{{ route('product.payment') }}">
+                @csrf
+                <input type="hidden" name="payment_id" value="" />
+                <input type="hidden" name="payer_id" value="" />
+                <input type="hidden" name="payment_status" value="" />
+                <input type="hidden" name="payment_method" id="payment_method" value="paypal" />
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
                         <div class="ps-checkout__billing">
@@ -11,48 +16,51 @@
                             <div class="form-group form-group--inline">
                                 <label>First Name<span>*</span>
                                 </label>
-                                <input class="form-control" type="text">
+                                <input class="form-control" type="text" name="first_name" required>
                             </div>
                             <div class="form-group form-group--inline">
-                                <label>Last Name<span>*</span>
-                                </label>
-                                <input class="form-control" type="text">
-                            </div>
-                            <div class="form-group form-group--inline">
-                                <label>Company Name<span>*</span>
-                                </label>
-                                <input class="form-control" type="text">
+                                <label>Last Name<span>*</span></label>
+                                <input class="form-control" type="text" name="last_name" required>
                             </div>
                             <div class="form-group form-group--inline">
                                 <label>Email Address<span>*</span>
                                 </label>
-                                <input class="form-control" type="email">
+                                <input class="form-control" type="email" name="email" required>
                             </div>
                             <div class="form-group form-group--inline">
-                                <label>Company Name<span>*</span>
-                                </label>
-                                <input class="form-control" type="text">
+                                <label>Company Name</label>
+                                <input class="form-control" type="text" name="company">
                             </div>
                             <div class="form-group form-group--inline">
-                                <label>Phone<span>*</span>
-                                </label>
-                                <input class="form-control" type="text">
+                                <label>Country / Region<span>*</span></label>
+                                <input class="form-control" type="text" name="country" required>
                             </div>
                             <div class="form-group form-group--inline">
-                                <label>Address<span>*</span>
-                                </label>
-                                <input class="form-control" type="text">
+                                <label>Address<span>*</span></label>
+                                <input class="form-control" type="text" name="address" required>
+                            </div>
+                            <div class="form-group form-group--inline">
+                                <label>Town / City<span>*</span></label>
+                                <input class="form-control" type="text" name="town" required>
+                            </div>
+                            <div class="form-group form-group--inline">
+                                <label>Postcode / Zip<span>*</span></label>
+                                <input class="form-control" type="text" name="zip" required>
+                            </div>
+                            <div class="form-group form-group--inline">
+                                <label>Phone<span>*</span></label>
+                                <input class="form-control" type="text" name="phone" required>
                             </div>
                             <div class="form-group">
                                 <div class="ps-checkbox">
-                                    <input class="form-control" type="checkbox" id="cb01">
+                                    <input class="form-control" type="checkbox" id="cb01" name="account">
                                     <label for="cb01">Create an account?</label>
                                 </div>
                             </div>
                             <h3 class="mt-40"> Addition information</h3>
                             <div class="form-group form-group--inline textarea">
                                 <label>Order Notes</label>
-                                <textarea class="form-control" rows="5" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                             </div>
                         </div>
                     </div>
@@ -73,7 +81,11 @@
                                         @php $total = 0 @endphp
                                         @foreach((array) session('cart') as $id => $details)
                                         <tr>
-                                            <td>{{ $details['name'] }} <br>Size: {{ $details['size'] }} <br> {{ isset($details['color_variation']) ? 'Color: ' . $details['color_variation']['name'] : 'Color: ' . $details['color'] }}</td>
+                                            <td>
+                                                <div class="product-cart-img">
+                                                    <img class="mr-15" src="{{ isset($details['color_variation']) ? asset($details['color_variation']['image']) : asset($details['image']) }}" alt="{{ $details['name'] }}" width="80"> <p style="color: white;">{{ $details['name'] }} <br>Size: {{ $details['size'] }} <br> {{ isset($details['color_variation']) ? 'Color: ' . $details['color_variation']['name'] : 'Color: ' . $details['color'] }} </p>
+                                                </div>
+                                            </td>
                                             <td>{{ $details['quantity'] }} x Rs. {{ ($details['price'] + (isset($details['color_variation']) ? $details['color_variation']['addon'] : 0)) * $details['quantity'] }}</td>
                                         </tr>
                                         @php $total += ($details['price'] + (isset($details['color_variation']) ? $details['color_variation']['addon'] : 0)) * $details['quantity'] @endphp
@@ -121,183 +133,6 @@
             </form>
         </div>
     </div>
-
-        <section class="banner">
-            <div class="container">
-                <div class="row">
-                    <div class="inner-banner">
-                        <h1 class="banner-title-head">Checkout</h1>
-                    </div>
-                </div>
-        </section>
-
-
-        <section class="checkout">
-            <div class="container">
-                <div class="row check-row">
-                    <form class="form-horizontal" method="post" id="order-place" role="form"
-                        action="{{ route('product.payment') }}">
-                        @csrf
-                        <input type="hidden" name="payment_id" value="" />
-                        <input type="hidden" name="payer_id" value="" />
-                        <input type="hidden" name="payment_status" value="" />
-                        <input type="hidden" name="payment_method" id="payment_method" value="paypal" />
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <p>Returning to Customer? <a href="#">Click here to login</a></p>
-                                    <div class="col-lg-6">
-                                        <div class="form-group info-section">
-                                            <label for="name">First Name*</label>
-                                            <input id="name" name="first_name" type="text" class="form-control"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group info-section">
-                                            <label for="lname">Last Name*</label>
-                                            <input id="lname" name="last_name" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group info-section">
-                                            <label for="email">Email Address*</label>
-                                            <input id="email" name="email" type="email" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group info-section">
-                                            <label for="phone">Phone*</label>
-                                            <input id="phone" name="phone" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group info-section">
-                                            <label for="company">Company Name(Optional)</label>
-                                            <input id="company" name="company" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group info-section">
-                                            <label for="country">Country/Region*</label>
-                                            <input id="country" name="country" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group info-section">
-                                            <label for="address">Address*</label>
-                                            <input id="address" name="address" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group info-section">
-                                            <label for="city">Town/City*</label>
-                                            <input id="city" name="town" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group info-section">
-                                            <label for="zip">Postcode/Zip*</label>
-                                            <input id="zip" name="zip" type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="form-group info-section">
-                                            <label for="check-1" class="check-1"><input id="check-1" name="signin"
-                                                    type="checkbox">Sign the up to receive email updates and news
-                                                (optional)</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="Your-Order">
-                                    <h2 class="text-center">Your Order</h2>
-                                    <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#collapseOne" aria-expanded="true"
-                                                    aria-controls="collapseOne">
-                                                    Pay with Credit Card
-                                                </button>
-                                            </h2>
-                                            <div id="collapseOne" class="accordion-collapse collapse show"
-                                                data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <div class="stripe-form-wrapper require-validation"
-                                                        data-stripe-publishable-key="{{ env('STRIPE_KEY') }}"
-                                                        data-cc-on-file="false">
-                                                        <div id="card-element" class="StripeElement StripeElement--empty">
-                                                            <div class="__PrivateStripeElement"
-                                                                style="margin: 0px !important; padding: 0px !important; border: none !important; display: block !important; background: transparent !important; position: relative !important; opacity: 1 !important; --stripeElementWidth: 521px;">
-                                                                <iframe name="__privateStripeFrame2336" frameborder="0"
-                                                                    allowtransparency="true" scrolling="no"
-                                                                    role="presentation" allow="payment *"
-                                                                    src="https://js.stripe.com/v3/elements-inner-card-40ed1ee1f911278671e9982f316269db.html#wait=false&amp;mids[guid]=NA&amp;mids[muid]=NA&amp;mids[sid]=NA&amp;style[base][color]=%2332325d&amp;style[base][lineHeight]=18px&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSmoothing]=antialiased&amp;style[base][fontSize]=16px&amp;style[base][::placeholder][color]=%23aab7c4&amp;style[invalid][color]=%23fa755a&amp;style[invalid][iconColor]=%23fa755a&amp;rtl=false&amp;componentName=card&amp;keyMode=test&amp;apiKey=pk_test_lkMq1Om8KnexFcuPpAlxrbxe00pfcOxxvr&amp;referrer=https%3A%2F%2Fnewdemowebsites.com%2Fcustom-backend%2Fzapgo%2Fpublic%2FupdateCart&amp;controllerId=__privateStripeController2331"
-                                                                    title="Secure card payment input frame"
-                                                                    style="border: none !important; margin-top: 0px; margin-right: 0px !important; margin-bottom: 0px !important; margin-left: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; user-select: none !important; transform: translate(0px) !important; color-scheme: light only !important; height: 18px;"></iframe><input
-                                                                    class="__PrivateStripeElement-input"
-                                                                    aria-hidden="true" aria-label=" "
-                                                                    autocomplete="false" maxlength="1"
-                                                                    style="border: none !important; display: block !important; position: absolute !important; height: 1px !important; top: -1px !important; left: 0px !important; padding: 0px !important; margin: 0px !important; width: 100% !important; opacity: 0 !important; background: transparent !important; pointer-events: none !important; font-size: 16px !important;">
-                                                            </div>
-                                                        </div>
-                                                        <div id="card-errors" role="alert"></div>
-                                                        <div class="form-group info-section custom-btn">
-                                                            <button class="btn btn-red btn-block blue-custom"
-                                                                type="button" id="stripe-submit">Pay Now</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                    aria-expanded="false" aria-controls="collapseTwo">
-                                                    pay with paypal
-                                                </button>
-                                            </h2>
-                                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                                data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <div id="paypal-button-container-popup"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                    aria-expanded="false" aria-controls="collapseThree">
-                                                    Accordion Item #3
-                                                </button>
-                                            </h2>
-                                            <div id="collapseThree" class="accordion-collapse collapse"
-                                                data-bs-parent="#accordionExample">
-                                                <div class="accordion-body">
-                                                    <strong>This is the third item's accordion body.</strong> It is hidden
-                                                    by default, until the collapse plugin adds the appropriate classes that
-                                                    we use to style each element. These classes control the overall
-                                                    appearance, as well as the showing and hiding via CSS transitions. You
-                                                    can modify any of this with custom CSS or overriding our default
-                                                    variables. It's also worth noting that just about any HTML can go within
-                                                    the <code>.accordion-body</code>, though the transition does limit
-                                                    overflow.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
     @endsection
 
 
