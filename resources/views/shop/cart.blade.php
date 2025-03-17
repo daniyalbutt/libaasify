@@ -25,11 +25,11 @@
                                 <td>
                                     <a class="ps-product__preview" href="product-detail.html">
                                         <div class="product-cart-img">
-                                            <img class="mr-15" src="{{ $details['color_variation'] != null ? asset($details['color_variation']['image']) : asset($details['image']) }}" alt="{{ $details['name'] }}" width="100"> <p>{{ $details['name'] }} <br>Size: {{ $details['size'] }} <br> {{ $details['color_variation'] != null ? 'Color: ' . $details['color_variation']['name'] : '' }} </p>
+                                            <img class="mr-15" src="{{ isset($details['color_variation']) ? asset($details['color_variation']['image']) : asset($details['image']) }}" alt="{{ $details['name'] }}" width="100"> <p>{{ $details['name'] }} <br>Size: {{ $details['size'] }} <br> {{ isset($details['color_variation']) ? 'Color: ' . $details['color_variation']['name'] : '' }} </p>
                                         </div>
                                     </a>
                                 </td>
-                                <td>Rs. {{ $details['price'] + ($details['color_variation'] != null ? $details['color_variation']['addon'] : '') }}</td>
+                                <td>Rs. {{ $details['price'] + (isset($details['color_variation']) ? $details['color_variation']['addon'] : 0) }}</td>
                                 <td>
                                     <div class="form-group--number">
                                         <button class="minus"><span>-</span></button>
@@ -37,8 +37,8 @@
                                         <button class="plus"><span>+</span></button>
                                     </div>
                                 </td>
-                                <td>Rs. {{ ($details['price'] + ($details['color_variation'] != null ? $details['color_variation']['addon'] : '')) * $details['quantity'] }} </td>
-                                @php $total += ($details['price'] + ($details['color_variation'] != null ? $details['color_variation']['addon'] : '')) * $details['quantity'] @endphp
+                                <td>Rs. {{ ($details['price'] + (isset($details['color_variation']) ? $details['color_variation']['addon'] : 0)) * $details['quantity'] }} </td>
+                                @php $total += ($details['price'] + (isset($details['color_variation']) ? $details['color_variation']['addon'] : 0)) * $details['quantity'] @endphp
                                 <td>
                                     <div class="">
                                         <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button>
