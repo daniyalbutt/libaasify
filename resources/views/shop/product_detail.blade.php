@@ -72,39 +72,44 @@
                             <h4>QUICK REVIEW</h4>
                             {!! $product->short_desc !!}
                         </div>
-                        <div class="ps-product__block ps-product__style">
-                            <h4>CHOOSE YOUR STYLE</h4>
-                            <ul>
-                                <li>
-                                    <a href="javascript:;">
-                                        <img src="{{ asset($product->image) }}" alt="{{ $product->default_color }}">
-                                    </a>
-                                </li>
-                                @foreach($product->variation_by_name('color')->get() as $key => $value)
-                                <li>
-                                    <a href="javascript:;">
-                                        <img src="{{ asset($value->image) }}" alt="{{ $value->get_attribute->name }}">
-                                    </a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="ps-product__block ps-product__size">
-                            <h4>CHOOSE SIZE<a href="#">Size chart</a></h4>
-                            <select class="ps-select selectpicker">
-                                <option value="1">Select Size</option>
-                                @foreach($product->variation_by_name('size')->get() as $key => $value)
-                                <option value="{{ $value->id }}">{{ $value->get_attribute->name }}</option>
-                                @endforeach
-                            </select>
-                            <div class="form-group">
-                                <input class="form-control" type="number" value="1">
+                        <form action="{{ route('product.cart.add') }}" method="post">
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <input type="hidden" name="color_variation" value="">
+                            @csrf
+                            <div class="ps-product__block ps-product__style">
+                                <h4>CHOOSE YOUR STYLE</h4>
+                                <ul class="color_variation">
+                                    <li>
+                                        <a href="javascript:;" class="selected" data-images="{{ json_encode($product->images) }}" data-image="{{ asset($product->image) }}">
+                                            <img src="{{ asset($product->image) }}" alt="{{ $product->default_color }}">
+                                        </a>
+                                    </li>
+                                    @foreach($product->variation_by_name('color')->get() as $key => $value)
+                                    <li>
+                                        <a href="javascript:;" data-images="{{ $value->images }}" data-image="{{ asset($value->image) }}" data-id="{{ $value->id }}">
+                                            <img src="{{ asset($value->image) }}" alt="{{ $value->get_attribute->name }}">
+                                        </a>
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </div>
-                        </div>
-                        <div class="ps-product__shopping">
-                            <a class="ps-btn mb-10" href="cart.html">Add to cart<i class="ps-icon-next"></i></a>
-                            <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div>
-                        </div>
+                            <div class="ps-product__block ps-product__size">
+                                <h4>CHOOSE SIZE<a href="#">Size chart</a></h4>
+                                <select class="ps-select selectpicker" name="size" required>
+                                    <option value="">Select Size</option>
+                                    @foreach($product->variation_by_name('size')->get() as $key => $value)
+                                    <option value="{{ $value->get_attribute->name }}">{{ $value->get_attribute->name }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="form-group">
+                                    <input class="form-control qty-value" type="number" value="1" name="qty">
+                                </div>
+                            </div>
+                            <div class="ps-product__shopping">
+                                <button class="ps-btn mb-10" type="submit">Add to cart<i class="ps-icon-next"></i></button>
+                                <div class="ps-product__actions"><a class="mr-10" href="whishlist.html"><i class="ps-icon-heart"></i></a><a href="compare.html"><i class="ps-icon-share"></i></a></div>
+                            </div>
+                        </form>
                     </div>
                     <div class="clearfix"></div>
                     <div class="ps-product__content mt-50">
@@ -265,5 +270,14 @@
 @endpush
 
 @push('js')
-
+<script>
+    $(document).ready(function(){
+        $('.color_variation a').click(function(){
+            $('.color_variation a').removeClass('selected');
+            $(this).addClass('selected');
+            var get_id = $(this).data('id');
+            $('input[name="color_variation"]').val(get_id);
+        })
+    });
+</script>
 @endpush

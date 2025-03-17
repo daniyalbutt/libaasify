@@ -12,7 +12,6 @@
 <script type="text/javascript" src="{{ asset('plugins/elevatezoom/jquery.elevatezoom.js') }}"></script>
 <script type="text/javascript" src="{{ asset('plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC9UyRrFn8cIqD5cAtLYg3aVSNREWuaQQ&callback=initMap"></script>
 <script type="text/javascript" src="{{ asset('plugins/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('plugins/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
@@ -21,6 +20,7 @@
 <script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript" src="{{ asset('front/js/main.js') }}"></script>
 
 <script src="{{ asset('admin/js/toastr.js') }}"></script>
@@ -102,9 +102,10 @@ d
 
 <script>
     $(document).ready(function() {
-        var count = 1;
-        var stock = parseInt($("#input-qty").attr("max"));
+
+        var stock = 100;
         $(".plus").click(function() {
+            var count = parseInt($(this).prev().val());
             if (count < stock) {
                 count += 1;
                 $(".qty-value").val(count);
@@ -116,25 +117,30 @@ d
 
 
         $(".minus").click(function() {
+            var count = parseInt($(this).next().val());
             if (count > 1) {
                 count -= 1;
                 $(".qty-value").val(count)
             }
         });
 
-        var input = document.querySelector('.qty-value');
+        if($(".qty-value").length != 0){
 
-        input.addEventListener('input', function() {
-            var value = input.value;
+            var input = document.querySelector('.qty-value');
 
-            value = value.replace(/^0+/, '');
+            input.addEventListener('input', function() {
+                var value = input.value;
 
-            value = value.replace(/\D/g, '');
-            if (value.length > 3) {
-                value = value.slice(0, 3);
-            }
-            input.value = value;
-        });
+                value = value.replace(/^0+/, '');
+
+                value = value.replace(/\D/g, '');
+                if (value.length > 3) {
+                    value = value.slice(0, 3);
+                }
+                input.value = value;
+            });
+        }
+
         $(".qty-value").on('input', function() {
             var value = parseInt($(this).val());
             if (isNaN(value) || value < 1) {

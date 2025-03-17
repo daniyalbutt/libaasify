@@ -147,8 +147,12 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' =>  ['auth', 'is
 Route::group(['as' => 'product.'], function () {
     Route::get('shop', [CartController::class, 'shop'])->name('shop');
     Route::get('collections/{slug}', [CartController::class, 'shopBySlug'])->name('shop.slug');
-Route::get('{category}/product/{slug}',[CartController::class, 'detail'])->name('detail');
+    Route::get('{category}/product/{slug}',[CartController::class, 'detail'])->name('detail');
     Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
     Route::post('payment',[CartController::class, 'payment'])->name('payment');
     Route::get('add-wishlist',[CartController::class,'addWishlist'])->name('Addwishlist');
+    Route::post('cart/add',[CartController::class,'addToCart'])->name('cart.add');
+    Route::get('cart',[CartController::class,'cartView'])->name('cart');
+    Route::get('update-cart',[CartController::class,'updateCart'])->name('update.cart');
+    Route::delete('remove-from-cart',[CartController::class,'removeCart'])->name('remove.from.cart');
 });

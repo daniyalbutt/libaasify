@@ -5558,7 +5558,7 @@ textarea.form-control {
     display: inline-block;
     width: 60px;
     border: 3px solid #e5e5e5; }
-    .ps-product--detail .ps-product__style ul li a:hover {
+    .ps-product--detail .ps-product__style ul li a:hover, .ps-product--detail .ps-product__style ul li a.selected {
       border-color: #2AC37D; }
 
 .ps-product--detail .ps-product__size > h4 a {
@@ -6552,4 +6552,19 @@ html .bg--parallax {
 .ps-badge.ps-badge--new {
   right: 0;
   left: auto;
+}
+
+button.btn.dropdown-toggle.bs-placeholder.btn-primary.bs-invalid {
+  background-color: #f2dede !important;
+}
+
+.product-cart-img {
+  display: flex;
+  align-items: center;
+}
+
+.product-cart-img p {
+  color: black;
+  margin: 0;
+  font-weight: 500;
 }

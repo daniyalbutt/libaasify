@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Category,Product};
+use App\Models\{Category,Product,AttributeValueProduct};
 use Illuminate\Http\Request;
 use Session;
 use Validator;
 use Stripe;
+use DB;
 
 class CartController extends Controller
 {
@@ -85,6 +86,51 @@ class CartController extends Controller
 	
 
 		Session::flash('message', 'Your Order has been placed Successfully');	
+	}
+
+	public function addToCart(Request $request){
+		$product_id = $request->product_id;
+		$product = Product::findOrFail($product_id);
+		$cart = session()->get('cart', []);
+		if(isset($cart[$product_id])) {
+            $cart[$product_id]['quantity']++;
+        } else {
+            $cart[$product_id] = [
+                "name" => $product->name,
+                "quantity" => $request->qty,
+                "price" => $product->price,
+                "image" => $product->image,
+				'size' => $request->size,
+				'color' => $product->default_color
+            ];
+
+			if($request->color_variation != null){
+				$data = AttributeValueProduct::where('id', $request->color_variation)->first();
+				$cart[$product_id]['color_variation'] = [
+					'name' => $data->get_attribute->name,
+					'image' => $data->image,
+					'addon' => $data->addon
+				];
+			}
+        }
+
+        session()->put('cart', $cart);
+		return redirect()->route('product.cart');
+	}
+
+	public function cartView(){
+		return view('shop.cart');
+	}
+
+	public function removeCart(Request $request){
+		if($request->id) {
+            $cart = session()->get('cart');
+            if(isset($cart[$request->id])) {
+                unset($cart[$request->id]);
+                session()->put('cart', $cart);
+            }
+            session()->flash('success', 'Product removed successfully');
+        }
 	}
 
  
