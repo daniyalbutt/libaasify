@@ -153,6 +153,6 @@ Route::group(['as' => 'product.'], function () {
     Route::get('add-wishlist',[CartController::class,'addWishlist'])->name('Addwishlist');
     Route::post('cart/add',[CartController::class,'addToCart'])->name('cart.add');
     Route::get('cart',[CartController::class,'cartView'])->name('cart');
-    Route::get('update-cart',[CartController::class,'updateCart'])->name('update.cart');
+    Route::post('update-cart',[CartController::class,'updateCart'])->name('update.cart');
     Route::delete('remove-from-cart',[CartController::class,'removeCart'])->name('remove.from.cart');
 });

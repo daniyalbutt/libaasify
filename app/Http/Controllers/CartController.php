@@ -133,5 +133,15 @@ class CartController extends Controller
         }
 	}
 
+	public function updateCart(Request $request){
+		$cart = session()->get('cart');
+		$qty = $request->qty;
+		foreach($qty as $key => $value){
+			$cart[$key]["quantity"] = $value;
+			session()->put('cart', $cart);
+		}
+		return redirect()->route('product.checkout');
+	}
+
  
 }
