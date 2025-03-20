@@ -25,35 +25,33 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="d-flex justify-content-between">
-                                <h4 class="box-title">Order Info</h4>
+                                <h4 class="box-title">Order Info - # {{ $data->invoice }}</h4>
                             </div>
                             <div class="table-responsive">
                                 <table class="table product-table">
                                     <thead>
                                         <th>ID</th>
                                         <th>Product</th>
-                                        <th></th>
                                         <th>Price</th>
 
 
                                     </thead>
                                     <tbody>
-                                        @foreach ($data->products as $items)
+                                        @foreach ($data->order_products as $items)
                                             <tr>
                                                 <td>{{ $items->id }}</td>
-                                                <td>{{ $items->name }}</td>
-                                                <td class="product-image">
-                                                    <img src="{{ asset($items->image) }}" class="img-fluid" alt="">
+                                                <td>
+                                                    {{ $items->name }}<br>
+                                                    Color : {{ $items->color }}<br>
+                                                    Size : {{ $items->size }}<br>
                                                 </td>
-                                                <td>{{ $items->pivot->price }}</td>
+                                                <td>{{ $items->price }}</td>
                                             </tr>
                                         @endforeach
                                         <tr>
-                                            <td>&nbsp;</td>
-                                            <td class="total-price"><b>Total Price:</b>
-                                            </td>
-                                            <td class="total-price"><b>${{ $data->amount }}</b>
-                                            </td>
+                                            <td></td>
+                                            <td><b>Total Price:</b></td>
+                                            <td><b>${{ $data->amount }}</b></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -66,7 +64,7 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h4 class="box-title mt-40">Shipping Address</h4>
+                            <h4 class="box-title">Shipping Address</h4>
                             <div class="table-responsive">
                                 <table class="table shipping-table">
                                     <tbody>
@@ -75,12 +73,20 @@
                                             <td>{{ ucwords($data->name) }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Country</td>
-                                            <td>{{ ucwords($data->country) }}</td>
+                                            <td>Email</td>
+                                            <td>{{ $data->email }}</td>
                                         </tr>
                                         <tr>
                                             <td>Phone</td>
                                             <td>{{ $data->phone }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ZIP</td>
+                                            <td>{{ $data->zip }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Country</td>
+                                            <td>{{ ucwords($data->country) }}</td>
                                         </tr>
                                         <tr>
                                             <td>Address</td>

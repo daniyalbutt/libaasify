@@ -273,10 +273,24 @@
 <script>
     $(document).ready(function(){
         $('.color_variation a').click(function(){
+            var image_path = '{{ asset('') }}';
+            var get_images = $(this).data('images');
+            var get_image = $(this).data('image');
+            var set_item = "<div class='item'><img src='"+get_image+"' alt='{{ $product->name }}'></div>";
+            var set_image_slider = '<div class="item"><img class="zoom" src="'+get_image+'" alt="{{ $product->name }}" data-zoom-image="'+get_image+'"></div>';
+            for(var i = 0; i < get_images.length; i++){
+                set_item += "<div class='item'><img src='"+image_path+get_images[i]+"' alt='{{ $product->name }}'></div>";
+                set_image_slider += '<div class="item"><img class="zoom" src="'+image_path+get_images[i]+'" alt="{{ $product->name }}" data-zoom-image="'+image_path+get_images[i]+'"></div>';
+            }
+            
+            $('.ps-product__variants').html(set_item);
+            $('.ps-product__image').html(set_image_slider);
             $('.color_variation a').removeClass('selected');
             $(this).addClass('selected');
             var get_id = $(this).data('id');
             $('input[name="color_variation"]').val(get_id);
+            $('.ps-product__variants').slick('refresh');
+            $('.ps-product__image').slick('refresh');
         })
     });
 </script>

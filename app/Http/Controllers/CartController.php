@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\{Category,Product,AttributeValueProduct};
+use App\Models\{Category,Product,AttributeValueProduct,Order,OrderProduct};
 use Illuminate\Http\Request;
 use Session;
 use Validator;
@@ -45,47 +45,55 @@ class CartController extends Controller
 		return redirect()->back()->with('success','Product Added to Wishlist Successfully');
 	}
 
-    public function payment(Request $request)
-    {
-		
-			try	{
-				
-				try {
-					Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+    public function payment(Request $request){
+		$this->validate($request, [
+			'first_name' => 'required',
+			'last_name' => 'required',
+			'email' => 'required',
+			'country' => 'required',
+			'address' => 'required',
+			'town' => 'required',
+			'zip' => 'required',
+			'phone' => 'required',
+		]);
 
-					$customer = \Stripe\Customer::create(array(
-						'email' => $request->email,
-						'name' => $request->first_name,
-						'phone' => $request->phone,
-						'description' => "Client Created From Website",
-						'source'  => $request->stripeToken,
-					));
-				} catch (Exception $e) {
-					return redirect()->back()->with('stripe_error', $e->getMessage());
-				}
-				
-				try {
-					
-					$charge = \Stripe\Charge::create(array(
-						'customer' => $customer->id,
-						'amount'   =>  120,
-						'currency' => 'USD',
-						'description' => "Payment From Website",
-						'metadata' => array("name" => $request->first_name, "email" => $request->email),
-					));
-				} catch (Exception $e) {
+		$data = new Order();
+		$data->name = $request->first_name . ' ' . $request->last_name;
+		$data->email = $request->email;
+		$data->phone = $request->phone;
+		$data->zip = $request->zip;
+		$data->country = $request->country;
+		$data->address = $request->address;
+		$data->notes = $request->message;
+		$latest = DB::table('orders')->orderBy('id', 'desc')->first();
+		if($latest != null){
+			$data->invoice = 'JEFF' . (str_pad((int)$latest->invoice + 1, 4, '0', STR_PAD_LEFT));
+		}else{
+			$data->invoice = 'JEFF' . (str_pad((int)1 + 1, 4, '0', STR_PAD_LEFT));
+		}
+		$data->payment_method = $request->payment;
+		$cart = session()->get('cart');
+		$get_amount = 0;
+		foreach($cart as $key => $value){
+			$get_amount = $get_amount + $value['price'];
+		}
+		$data->amount = $get_amount;
+		$data->save();
 
-					return redirect()->back()->with('stripe_error', $e->getMessage());
-				}
-			}
-			catch (Exception $e) {
-				return redirect()->back()->with('stripe_error', $e->getMessage());
-			}
-			
-			$chargeJson = $charge->jsonSerialize();
-	
-
-		Session::flash('message', 'Your Order has been placed Successfully');	
+		$get_amount = 0;
+		foreach($cart as $key => $value){
+			$order_product = new OrderProduct();
+			$order_product->name = $value['name'];
+			$order_product->quantity = $value['quantity'];
+			$order_product->price = $value['price'];
+			$order_product->size = $value['size'];
+			$order_product->color = $value['color'];
+			$order_product->order_id = $data->id;
+			$order_product->save();
+		}
+		session()->forget('cart');
+		Session::flash('message', 'Your Order has been placed Successfully');
+		return redirect()->route('home');
 	}
 
 	public function addToCart(Request $request){

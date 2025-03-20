@@ -3,12 +3,11 @@
 <main class="ps-main">
     <div class="ps-checkout pt-80 pb-80">
         <div class="ps-container">
-            <form class="ps-checkout__form form-horizontal" action="do_action" method="post" id="order-place" role="form" action="{{ route('product.payment') }}">
+            @if($errors->any())
+            {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
+            @endif
+            <form class="ps-checkout__form form-horizontal" action="{{ route('product.payment') }}" method="post" id="order-place" role="form" action="{{ route('product.payment') }}">
                 @csrf
-                <input type="hidden" name="payment_id" value="" />
-                <input type="hidden" name="payer_id" value="" />
-                <input type="hidden" name="payment_status" value="" />
-                <input type="hidden" name="payment_method" id="payment_method" value="paypal" />
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
                         <div class="ps-checkout__billing">
@@ -105,15 +104,14 @@
                                 <h3>Payment Method</h3>
                                 <div class="form-group cheque">
                                     <div class="ps-radio">
-                                        <input class="form-control" type="radio" id="rdo01" name="payment" checked>
-                                        <label for="rdo01">Cheque Payment</label>
-                                        <p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                        <input class="form-control" type="radio" id="rdo01" name="payment" value="cod" checked>
+                                        <label for="rdo01">Cash On Delivery</label>
                                     </div>
                                 </div>
                                 <div class="form-group paypal">
                                     <div class="ps-radio ps-radio--inline">
-                                        <input class="form-control" type="radio" name="payment" id="rdo02">
-                                        <label for="rdo02">Paypal</label>
+                                        <input class="form-control" type="radio" name="payment" id="rdo02" value="other">
+                                        <label for="rdo02">Other</label>
                                     </div>
                                     <ul class="ps-payment-method">
                                         <li><a href="#"><img src="images/payment/1.png" alt=""></a></li>
@@ -135,10 +133,7 @@
     </div>
     @endsection
 
-
     @push('css')
-        <link rel="stylesheet" href="{{ asset('front/css/checkout.css') }}">
-
         <style>
             .StripeElement {
                 box-sizing: border-box;
@@ -188,7 +183,5 @@
 
 
     @push('js')
-        @include('payment.paypal')
 
-        @include('payment.stripe')
     @endpush
