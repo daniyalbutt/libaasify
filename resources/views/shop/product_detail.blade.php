@@ -94,6 +94,7 @@
                                 </ul>
                             </div>
                             <div class="ps-product__block ps-product__size">
+                                @if(count($product->variation_by_name('size')->get()) != 0)
                                 <h4>CHOOSE SIZE<a href="#">Size chart</a></h4>
                                 <select class="ps-select selectpicker" name="size" required>
                                     <option value="">Select Size</option>
@@ -101,6 +102,7 @@
                                     <option value="{{ $value->get_attribute->name }}">{{ $value->get_attribute->name }}</option>
                                     @endforeach
                                 </select>
+                                @endif
                                 <div class="form-group">
                                     <input class="form-control qty-value" type="number" value="1" name="qty">
                                 </div>

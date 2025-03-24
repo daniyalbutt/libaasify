@@ -74,7 +74,6 @@ class ProductController extends Controller
         $attribute_value = AttributeValue::whereHas('attribute', function($q){
             $q->where('slug', 'color');
         })->get();
-        dd($attribute_value);
         return view("admin.product.create", compact('data', 'attributes', 'attribute_value'));
     }
 
