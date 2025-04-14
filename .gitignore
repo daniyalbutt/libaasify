@@ -3,7 +3,6 @@
 /public/storage
 /public/uploads
 /vendor
-/storage/*.key
 .env
 .env.backup
 .phpunit.result.cache
@@ -14,4 +13,3 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-!/storage/app/public/downloads
