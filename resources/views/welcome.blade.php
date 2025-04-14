@@ -1,261 +1,129 @@
 @extends('layouts.app')
 @section('title', 'Home Page')
 @section('content')
-<main class="ps-main">
-    <div class="ps-banner">
-        <div class="rev_slider fullscreenbanner" id="home-banner">
-            <ul>
-                <li class="ps-banner" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-2972" data-rotate="0" data-slotamount="default" data-transition="random">
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="5" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('front/images/slider/3.jpg') }}" />
-                    <div class="tp-caption ps-banner__header" data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-type="text" data-voffset="['-150','-120','-150','-170']" data-width="['none','none','none','400']" data-x="left" data-y="['middle','middle','middle','middle']" id="layer-1">
-                        <p>March 2002<br />
-                            Nike SB Dunk Low Pro
-                        </p>
+<main class="main-bg">
+    <!--====== Start Hero Section ======-->
+    <section class="hero-section">
+        <!--=== Hero Wrapper ===-->
+        <div class="hero-wrapper-one">
+            <div class="container">
+                <div class="hero-dots"></div>
+                <div class="hero-slider-one">
+                    <!--=== Single Slider ===-->
+                    <div class="single-hero-slider">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!--=== Hero Content ===-->
+                                <div class="hero-content style-one mb-50">
+                                    <span class="sub-heading">Best for your categories</span>
+                                    <h1>Exclusive Collection <br>
+                                        in <span>Our Online</span>  Store</h1>
+                                    <p>Discover our exclusive collection available only in our online store. Shop now for unique and premium items that you won't find anywhere else.</p>
+                                    <ul>
+                                        <li>
+                                            <div class="price-box">
+                                                <div class="currency">$</div>
+                                                <div class="text">
+                                                    <span class="discount">Discount Price</span>
+                                                    <h3>140.00</h3>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/hero/line-1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <a href="shops.html" class="theme-btn style-one">Shop Now</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!--=== Hero Image ===-->
+                                <div class="hero-image-box">
+                                    <div class="hero-image">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/hero/hero-one_img1.jpg" alt="Hero Image">
+                                        <div class="hero-shape bg_cover" style="background-image: url(images/hero/hero-one-shape1.png);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tp-caption ps-banner__title" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-textalign="['center','center','center','center']" data-type="text" data-voffset="['-60','-40','-50','-70']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" id="layer21">
-                        <p class="text-uppercase">SUBA</p>
+                    <!--=== Single Slider ===-->
+                    <div class="single-hero-slider">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!--=== Hero Content ===-->
+                                <div class="hero-content style-one mb-50">
+                                    <span class="sub-heading">Best for your categories</span>
+                                    <h1>Exclusive Collection <br>
+                                        in <span>Our Online</span>  Store</h1>
+                                    <p>Discover our exclusive collection available only in our online store. Shop now for unique and premium items that you won't find anywhere else.</p>
+                                    <ul>
+                                        <li>
+                                            <div class="price-box">
+                                                <div class="currency">$</div>
+                                                <div class="text">
+                                                    <span class="discount">Discount Price</span>
+                                                    <h3>140.00</h3>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/hero/line-1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <a href="shops.html" class="theme-btn style-one">Shop Now</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!--=== Hero Image ===-->
+                                <div class="hero-image-box">
+                                    <div class="hero-image">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/hero/hero-one_img1.jpg" alt="Hero Image">
+                                        <div class="hero-shape bg_cover" style="background-image: url(images/hero/hero-one-shape1.png);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tp-caption ps-banner__description" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-textalign="['center','center','center','center']" data-type="text" data-voffset="['30','50','50','50']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" id="layer211">
-                        <p>Supa wanted something that was going to rep his East Coast<br />
-                            roots and, more specifically, his hometown of<br />
-                            New York City in a big way.
-                        </p>
-                    </div>
-                    <a class="tp-caption ps-btn" data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-textalign="['center','center','center','center']" data-type="text" data-voffset="['120','140','200','200']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" href="#" id="layer31">Purchase Now</a>
-                </li>
-                <li class="ps-banner ps-banner--white" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-100" data-rotate="0" data-slotamount="default" data-transition="random">
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="5" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('front/images/slider/2.jpg') }}" />
-                    <div class="tp-caption ps-banner__header" data-frames="[{&quot;delay&quot;:1000,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-type="text" data-voffset="['-150','-120','-150','-170']" data-width="['none','none','none','400']" data-x="left" data-y="['middle','middle','middle','middle']" id="layer20">
-                        <p>BEST ITEM<br />
-                            THIS SUMMER
-                        </p>
-                    </div>
-                    <div class="tp-caption ps-banner__title" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-textalign="['center','center','center','center']" data-type="text" data-voffset="['-60','-40','-50','-70']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" id="layer339">
-                        <p class="text-uppercase">Recovery</p>
-                    </div>
-                    <div class="tp-caption ps-banner__description" data-frames="[{&quot;delay&quot;:1200,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-textalign="['center','center','center','center']" data-type="text" data-voffset="['30','50','50','50']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" id="layer2-14">
-                        <p>Supa wanted something that was going to rep his East Coast<br />
-                            roots and, more specifically, his hometown of<br />
-                            New York City in a big way.
-                        </p>
-                    </div>
-                    <a class="tp-caption ps-btn" data-frames="[{&quot;delay&quot;:1500,&quot;speed&quot;:1500,&quot;frame&quot;:&quot;0&quot;,&quot;from&quot;:&quot;x:50px;opacity:0;&quot;,&quot;to&quot;:&quot;o:1;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;},{&quot;delay&quot;:&quot;wait&quot;,&quot;speed&quot;:300,&quot;frame&quot;:&quot;999&quot;,&quot;to&quot;:&quot;x:50px;opacity:0;&quot;,&quot;ease&quot;:&quot;Power3.easeInOut&quot;}]" data-hoffset="['-60','15','15','15']" data-responsive_offset="on" data-textalign="['center','center','center','center']" data-type="text" data-voffset="['120','140','200','200']" data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']" href="#" id="layer364">Purchase Now</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="ps-section--features-product ps-section masonry-root pt-100 pb-100">
-        <div class="ps-container">
-            <div class="ps-section__header mb-50">
-                <h3 class="ps-section__title" data-mask="features">- Features Products</h3>
-                <ul class="ps-masonry__filter">
-                    <li class="current"><a data-filter="*" href="#">All <sup>8</sup></a></li>
-                    <li><a data-filter=".nike" href="#">Nike <sup>1</sup></a></li>
-                    <li><a data-filter=".adidas" href="#">Adidas <sup>1</sup></a></li>
-                    <li><a data-filter=".men" href="#">Men <sup>1</sup></a></li>
-                    <li><a data-filter=".women" href="#">Women <sup>1</sup></a></li>
-                    <li><a data-filter=".kids" href="#">Kids <sup>4</sup></a></li>
-                </ul>
-            </div>
-            <div class="ps-section__content pb-50">
-                <div class="masonry-wrapper" data-col-md="4" data-col-sm="2" data-col-xs="1" data-gap="30" data-radio="100%">
-                    <div class="ps-masonry">
-                        <div class="grid-sizer"></div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>New</span></div>
-                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div>
-                                        <img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/1.jpg" />
-                                    </div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> <del>&pound;220</del> &pound; 120</span>
-                                        </div>
-                                    </div>
+                    <!--=== Single Slider ===-->
+                    <div class="single-hero-slider">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!--=== Hero Content ===-->
+                                <div class="hero-content style-one mb-50">
+                                    <span class="sub-heading">Best for your categories</span>
+                                    <h1>Exclusive Collection <br>
+                                        in <span>Our Online</span>  Store</h1>
+                                    <p>Discover our exclusive collection available only in our online store. Shop now for unique and premium items that you won't find anywhere else.</p>
+                                    <ul>
+                                        <li>
+                                            <div class="price-box">
+                                                <div class="currency">$</div>
+                                                <div class="text">
+                                                    <span class="discount">Discount Price</span>
+                                                    <h3>140.00</h3>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/hero/line-1.png" alt="">
+                                        </li>
+                                        <li>
+                                            <a href="shops.html" class="theme-btn style-one">Shop Now</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="grid-item nike">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /></div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> &pound; 120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item adidas">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /></div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> &pound; 120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge ps-badge--sale"><span>-35%</span></div>
-                                        <img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" />
-                                    </div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> <del>&pound;220</del> &pound; 120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item men">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> &pound; 120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item women">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/6.jpg" /></div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> &pound; 120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/7.jpg" /></div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> &pound; 120</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/8.jpg" /></div>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail">
-                                            <a class="ps-shoe__name" href="#">Air Jordan 7 Retro</a>
-                                            <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                            <span class="ps-shoe__price"> &pound; 120</span>
-                                        </div>
+                            <div class="col-lg-6">
+                                <!--=== Hero Image ===-->
+                                <div class="hero-image-box">
+                                    <div class="hero-image">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/hero/hero-one_img1.jpg" alt="Hero Image">
+                                        <div class="hero-shape bg_cover" style="background-image: url(images/hero/hero-one-shape1.png);"></div>
                                     </div>
                                 </div>
                             </div>
@@ -264,341 +132,1915 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ps-section--offer">
-        <div class="ps-column"><a class="ps-offer" href="product-listing.php"><img alt="" src="https://tritact.co.uk/trueshoes/images/banner/home-banner-1.png" /></a></div>
-        <div class="ps-column"><a class="ps-offer" href="product-listing.php"><img alt="" src="https://tritact.co.uk/trueshoes/images/banner/home-banner-2.png" /></a></div>
-    </div>
-    <div class="ps-section--sale-off ps-section pt-80 pb-40">
-        <div class="ps-container">
-            <div class="ps-section__header mb-50">
-                <h3 class="ps-section__title" data-mask="Sale off">- Hot Deal Today</h3>
+    </section>
+
+    <section class="brand-logo-slider">
+        <div class="slick marquee">
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/assc.jpg" alt="">
+                </div>
             </div>
-            <div class="ps-section__content">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="ps-hot-deal">
-                            <h3>Nike DUNK Max 95 OG</h3>
-                            <p class="ps-hot-deal__price">Only: <span>&pound;155</span></p>
-                            <ul class="ps-countdown" data-time="December 30, 2017 15:37:25">
-                                <li>
-                                    <p>Hours</p>
-                                </li>
-                                <li class="divider">:</li>
-                                <li>
-                                    <p>minutes</p>
-                                </li>
-                                <li class="divider">:</li>
-                                <li>
-                                    <p>Seconds</p>
-                                </li>
-                            </ul>
-                            <a class="ps-btn" href="#">Order Today</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="ps-hotspot">
-                            <div class="ps-hotspot__content">
-                                <p class="heading"><a class="point first active" href="javascript:;">JUMP TO HEADER</a></p>
-                                <p><a class="point first active" href="javascript:;">Dynamic Fit Collar en la zona del tobillo que une la parte inferior de la pierna y el pie sin reducir la libertad de movimiento.</a></p>
-                            </div>
-                            <div class="ps-hotspot__content">
-                                <p class="heading"><a class="point second" href="javascript:;">JUMP TO HEADER</a></p>
-                                <p><a class="point second" href="javascript:;">Dynamic Fit Collar en la zona del tobillo que une la parte inferior de la pierna y el pie sin reducir la libertad de movimiento.</a></p>
-                            </div>
-                            <div class="ps-hotspot__content">
-                                <p class="heading"><a class="point third" href="javascript:;">JUMP TO HEADER</a></p>
-                                <p><a class="point third" href="javascript:;">Dynamic Fit Collar en la zona del tobillo que une la parte inferior de la pierna y el pie sin reducir la libertad de movimiento.</a></p>
-                            </div>
-                            <img alt="" src="https://tritact.co.uk/trueshoes/images/hot-deal.png" />
-                        </div>
-                    </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/vans.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/lv.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/off-white.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/kenzo.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/plam-angels.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/yeezy.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/dior.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/essentials.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/plam-angels.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/evo.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/adidas.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/jordan.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/nb.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/nike.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/adidas.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/drew.jpg" alt="">
+                </div>
+            </div>
+            <div class="slick-slide">
+                <div class="inner">
+                    <img src="https://culture-cirlce-static-dge7g8b8eue6fvcv.z02.azurefd.net/static/images/brand-logo/jordan.jpg" alt="">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ps-section ps-section--top-sales ps-owl-root pt-80 pb-80">
-        <div class="ps-container">
-            <div class="ps-section__header mb-50">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
-                        <h3 class="ps-section__title" data-mask="BEST SALE">- Top Sales</h3>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
-                        <div class="ps-owl-actions"><a class="ps-prev" href="#">Prev</a><a class="ps-next" href="#">Next</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="ps-section__content">
-                <div class="ps-owl--colection owl-slider" data-owl-auto="true" data-owl-dots="false" data-owl-duration="1000" data-owl-gap="30" data-owl-item="4" data-owl-item-lg="4" data-owl-item-md="3" data-owl-item-sm="2" data-owl-item-xs="1" data-owl-loop="true" data-owl-mousedrag="on" data-owl-nav="false" data-owl-speed="5000">
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>New</span></div>
-                                <img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/1.jpg" />
-                            </div>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                    <span class="ps-shoe__price"> &pound; 120</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>New</span></div>
-                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div>
-                                <img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" />
-                            </div>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                    <span class="ps-shoe__price"> <del>&pound;220</del> &pound; 120</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>New</span></div>
-                                <img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" />
-                            </div>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                    <span class="ps-shoe__price"> &pound; 120</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /></div>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                    <span class="ps-shoe__price"> &pound; 120</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>New</span></div>
-                                <img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" />
-                            </div>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                    <span class="ps-shoe__price"> &pound; 120</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/6.jpg" /></div>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/2.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/3.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/4.jpg" /><img alt="" src="https://tritact.co.uk/trueshoes/images/shoe/5.jpg" /></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail">
-                                    <a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                                    <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p>
-                                    <span class="ps-shoe__price"> &pound; 120</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ps-home-testimonial bg--parallax pb-80" data-background="images/background/parallax.jpg">
+    </section>
+    <!--====== End Hero Section ======-->
+    <!--===== Start Banner Section  ======-->
+    <section class="banner-promo-section pt-130">
         <div class="container">
-            <div class="owl-slider" data-owl-animate-in="fadeIn" data-owl-animate-out="fadeOut" data-owl-auto="true" data-owl-dots="true" data-owl-duration="1000" data-owl-gap="0" data-owl-item="1" data-owl-item-lg="1" data-owl-item-md="1" data-owl-item-sm="1" data-owl-item-xs="1" data-owl-loop="true" data-owl-mousedrag="on" data-owl-nav="false" data-owl-speed="5000">
-                <div class="ps-testimonial">
-                    <div class="ps-testimonial__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/testimonial/1.jpg" /></div>
-                    <header>
-                        <select class="ps-rating">
-                            <option value="1">1</option>
-                            <option value="1">2</option>
-                            <option value="1">3</option>
-                            <option value="1">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <p>Logan May - CEO &amp; Founder Invision</p>
-                    </header>
-                    <footer>
-                        <p>&ldquo;Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear claw sugar plum croissant. &ldquo;</p>
-                    </footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=== Section Title  ===-->
+                    <div class="section-title text-center mb-60" data-aos="fade-up" data-aos-delay="10" data-aos-duration="1000">
+                        <div class="sub-heading d-inline-flex align-items-center">
+                            <i class="flaticon-sparkler"></i>
+                            <span class="sub-title">New Collection</span>
+                            <i class="flaticon-sparkler"></i>
+                        </div>
+                        <h2>Shop New Collection</h2>
+                    </div>
                 </div>
-                <div class="ps-testimonial">
-                    <div class="ps-testimonial__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/testimonial/2.jpg" /></div>
-                    <header>
-                        <select class="ps-rating">
-                            <option value="1">1</option>
-                            <option value="1">2</option>
-                            <option value="1">3</option>
-                            <option value="1">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <p>Logan May - CEO &amp; Founder Invision</p>
-                    </header>
-                    <footer>
-                        <p>&ldquo;Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear claw sugar plum croissant. &ldquo;</p>
-                    </footer>
+            </div>
+            <div class="row">
+                <!--=== Banner Item  ===-->
+                <div class="col-xl-5">
+                    <div class="banner-item style-two mb-40 bg_cover" data-aos="fade-up" data-aos-delay="15" data-aos-duration="1200" style="background-image: url(images/banner/banner-bg1.jpg);">
+                        <div class="banner-img"><img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/banner/banner-img1.png" alt="banner image"></div>
+                        <div class="banner-content">
+                            <span>Up to 40% Off</span>
+                            <h4>Shop new Collection For Women</h4>
+                            <div class="separator"></div>
+                            <a href="shops.php" class="theme-btn style-two">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="ps-testimonial">
-                    <div class="ps-testimonial__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/testimonial/3.jpg" /></div>
-                    <header>
-                        <select class="ps-rating">
-                            <option value="1">1</option>
-                            <option value="1">2</option>
-                            <option value="1">3</option>
-                            <option value="1">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <p>Logan May - CEO &amp; Founder Invision</p>
-                    </header>
-                    <footer>
-                        <p>&ldquo;Dessert pudding dessert jelly beans cupcake sweet caramels gingerbread. Fruitcake biscuit cheesecake. Cookie topping sweet muffin pudding tart bear claw sugar plum croissant. &ldquo;</p>
-                    </footer>
+                <div class="col-xl-7">
+                    <!--=== Banner Item  ===-->
+                    <div class="banner-item style-three mb-40 bg_cover" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1400" style="background-image: url(images/banner/banner-bg2.jpg);">
+                        <div class="banner-img"><img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/banner/banner-img2.png" alt="banner image"></div>
+                        <div class="banner-content">
+                            <span>45% Off</span>
+                            <div class="separator"></div>
+                            <h4>Discover the Latest 
+                                Women's Collection
+                            </h4>
+                            <a href="shops.php" class="theme-btn style-one">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7">
+                    <!--=== Banner Item  ===-->
+                    <div class="banner-item style-three mb-40 bg_cover" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1600" style="background-image: url(images/banner/banner-bg3.jpg);">
+                        <div class="banner-img"><img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/banner/banner-img3.png" alt="banner image"></div>
+                        <div class="banner-content">
+                            <span>35% Off</span>
+                            <div class="separator"></div>
+                            <h4>Explore Fresh Arrivals 
+                                in Women’s Fashion
+                            </h4>
+                            <a href="shops.php" class="theme-btn style-one">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5">
+                    <!--=== Banner Item  ===-->
+                    <div class="banner-item style-two mb-40 bg_cover" data-aos="fade-up" data-aos-delay="30" data-aos-duration="1800" style="background-image: url(images/banner/banner-bg4.jpg);">
+                        <div class="banner-img"><img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/banner/banner-img4.png" alt="banner image"></div>
+                        <div class="banner-content">
+                            <span>Up to 40% Off</span>
+                            <h4>Unveil New Trends in Women's Clothing</h4>
+                            <div class="separator"></div>
+                            <a href="shops.php" class="theme-btn style-two">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ps-section ps-home-blog pt-80 pb-80">
-        <div class="ps-container">
-            <div class="ps-section__header mb-50">
-                <h2 class="ps-section__title" data-mask="News">- Our Story</h2>
-                <div class="ps-section__action"><a class="ps-morelink text-uppercase" href="#">View all post</a></div>
+    </section>
+    <!--===== End Banner Section  ======-->
+    <!--===== Start Category Section  ======-->
+    <section class="category-section pt-90 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--=== Section Title  ===-->
+                    <div class="section-title  text-center text-md-start mb-50" data-aos="fade-right" data-aos-delay="10" data-aos-duration="1000">
+                        <div class="sub-heading d-inline-flex align-items-center">
+                            <i class="flaticon-sparkler"></i>
+                            <span class="sub-title">Categories</span>
+                        </div>
+                        <h2>Browse Top Category</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!--=== Category Button  ===-->
+                    <div class="category-button text-center float-md-end mb-60" data-aos="fade-left" data-aos-delay="15" data-aos-duration="1200">
+                        <a href="shops.php" class="theme-btn style-one">View All <i class="far fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="ps-section__content">
+            <!--====== Start Category Wrapper ======-->
+            <div class="category-wrapper pb-85">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="category-slider">
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="10" data-aos-duration="800">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-7.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Man Shirts</p>
+                                        <span>10 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="15" data-aos-duration="1000">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-8.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Denim Jeans</p>
+                                        <span>45 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1200">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-9.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Casual Suit</p>
+                                        <span>30 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1400">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-10.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Summer Dress</p>
+                                        <span>36 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="30" data-aos-duration="1600">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-11.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Sweaters</p>
+                                        <span>24 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="35" data-aos-duration="1800">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-12.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Jackets</p>
+                                        <span>06 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="10" data-aos-duration="800">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-7.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Man Shirts</p>
+                                        <span>10 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="15" data-aos-duration="1000">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-8.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Denim Jeans</p>
+                                        <span>45 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="20" data-aos-duration="1200">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-9.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Casual Suit</p>
+                                        <span>30 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="25" data-aos-duration="1400">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-10.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Summer Dress</p>
+                                        <span>36 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="30" data-aos-duration="1600">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-11.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Sweaters</p>
+                                        <span>24 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="category-item style-two mb-110" data-aos="fade-up" data-aos-delay="35" data-aos-duration="1800">
+                                <a href="shop.php">
+                                    <div class="category-img">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/category/category-12.jpg" alt="Category Thumbnail">
+                                    </div>
+                                    <div class="category-content">
+                                        <p class="category-btn">Jackets</p>
+                                        <span>06 items</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===== End Category Section  ======-->
+    <!--===== Start Features Section  ======-->
+    <section class="features-products-section pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=== Section Title  ===-->
+                    <div class="section-title text-center mb-60" data-aos="fade-up" data-aos-delay="10" data-aos-duration="800">
+                        <div class="sub-heading d-inline-flex align-items-center">
+                            <i class="flaticon-sparkler"></i>
+                            <span class="sub-title">Feature Products</span>
+                            <i class="flaticon-sparkler"></i>
+                        </div>
+                        <h2>Our Features Collection</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="products-item-wrapper">
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="900">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-5.png" alt="Products">
+                        <div class="discount">20% Off</div>
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-5.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-6.png" alt="Products">
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-6.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1100">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-7.png" alt="Products">
+                        <div class="discount">20% Off</div>
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-7.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-8.png" alt="Products">
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-8.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1300">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-9.png" alt="Products">
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-9.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-10.png" alt="Products">
+                        <div class="discount">20% Off</div>
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-10.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-11.png" alt="Products">
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-11.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-12.png" alt="Products">
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-12.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1700">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-13.png" alt="Products">
+                        <div class="discount">20% Off</div>
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-13.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+                <!--=== Product Item  ===-->
+                <div class="product-item style-three" data-aos="fade-up" data-aos-duration="1800">
+                    <div class="product-thumbnail">
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-14.png" alt="Products">
+                        <div class="discount">20% Off</div>
+                        <div class="hover-content">
+                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                            <a href="images/products/feature-product-14.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info-wrap">
+                        <div class="product-info">
+                            <div class="product-meta d-flex">
+                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                <ul class="ratings rating4">
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                </ul>
+                            </div>
+                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                        </div>
+                        <div class="product-price">
+                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===== End Features Section  ======-->
+    <!--=== Start Deals Section  ===-->
+    <section class="today-deals-section white-bg pb-130 pt-130">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <!--=== Section Title  ===-->
+                    <div class="section-title mb-50" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="sub-heading d-inline-flex align-items-center">
+                            <i class="flaticon-sparkler"></i>
+                            <span class="sub-title">Today Deals</span>
+                        </div>
+                        <h2>Hurry Up. offer in End</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!--=== Today deals Arrow  ===-->
+                    <div class="today-deals-arrows style-one mb-60" data-aos="fade-left" data-aos-duration="1200"></div>
+                </div>
+            </div>
+        </div>
+        <!--=== Today deals Slider  ===-->
+        <div class="today-deals-slider" data-aos="fade-up" data-aos-duration="1400">
+            <!--=== Product Item  ===-->
+            <div class="product-item style-four">
+                <div class="product-thumbnail">
+                    <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/deal-1.png" alt="Products">
+                </div>
+                <div class="product-info-wrap">
+                    <div class="product-info">
+                        <div class="product-meta d-flex">
+                            <span>Brand: <a href="#">SOFOLI</a></span>
+                            <ul class="ratings rating4">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                    </div>
+                    <div class="product-countdown">
+                        <div class="simply-countdown"></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price new-price"><span class="currency">$</span>15.60</span>
+                        <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                    </div>
+                </div>
+            </div>
+            <!--=== Product Item  ===-->
+            <div class="product-item style-four">
+                <div class="product-thumbnail">
+                    <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/deal-2.png" alt="Products">
+                </div>
+                <div class="product-info-wrap">
+                    <div class="product-info">
+                        <div class="product-meta d-flex">
+                            <span>Brand: <a href="#">SOFOLI</a></span>
+                            <ul class="ratings rating4">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                    </div>
+                    <div class="product-countdown">
+                        <div class="simply-countdown"></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price new-price"><span class="currency">$</span>15.60</span>
+                        <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                    </div>
+                </div>
+            </div>
+            <!--=== Product Item  ===-->
+            <div class="product-item style-four">
+                <div class="product-thumbnail">
+                    <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/deal-3.png" alt="Products">
+                </div>
+                <div class="product-info-wrap">
+                    <div class="product-info">
+                        <div class="product-meta d-flex">
+                            <span>Brand: <a href="#">SOFOLI</a></span>
+                            <ul class="ratings rating4">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                    </div>
+                    <div class="product-countdown">
+                        <div class="simply-countdown"></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price new-price"><span class="currency">$</span>15.60</span>
+                        <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                    </div>
+                </div>
+            </div>
+            <!--=== Product Item  ===-->
+            <div class="product-item style-four">
+                <div class="product-thumbnail">
+                    <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/deal-2.png" alt="Products">
+                </div>
+                <div class="product-info-wrap">
+                    <div class="product-info">
+                        <div class="product-meta d-flex">
+                            <span>Brand: <a href="#">SOFOLI</a></span>
+                            <ul class="ratings rating4">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                    </div>
+                    <div class="product-countdown">
+                        <div class="simply-countdown"></div>
+                    </div>
+                    <div class="product-price">
+                        <span class="price new-price"><span class="currency">$</span>15.60</span>
+                        <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--=== End Deals Section  ===-->
+    <!--===== Start Shop Products Section  ======-->
+    <section class="shop-products-section pt-125">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!--=== Section Title  ===-->
+                    <div class="section-title text-center text-lg-start mb-60" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="sub-heading d-inline-flex align-items-center">
+                            <i class="flaticon-sparkler"></i>
+                            <span class="sub-title">Shop Prodcucts</span>
+                        </div>
+                        <h2>Our Shop all Products</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!--=== Pesco Tabs ===-->
+                    <div class="pesco-tabs style-one mb-50" data-aos="fade-left" data-aos-duration="1200">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#cat1">Best Sellers</button>
+                            </li>
+                            <li>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cat2">New Products</button>
+                            </li>
+                            <li>
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cat3">Sale Products</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=== Tab Content ===-->
+                    <div class="tab-content" data-aos="fade-up" data-aos-duration="1400">
+                        <!--=== Tab Pane  ===-->
+                        <div class="tab-pane fade show active" id="cat1">
+                            <!--=== Product Item Wrapper  ===-->
+                            <div class="products-item-wrapper">
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-5.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-5.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-6.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-6.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Lightweight linen summer dress with belt</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>45.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>64.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-7.png" alt="Products">
+                                        <div class="discount">30% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-7.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">CARDIGO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Classic leather biker jacket with zippers</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>05.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-11.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-11.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">PLOTO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Adidas Sports With a slim design, a vibrant entertainment</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-8.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-18.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">CARDIGO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Vintage wool peacoat (a type of short coat)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>35.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>74.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-13.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-13.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">Lioness</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Sequins are shiny beads sewn on clothes</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-9.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-9.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SUAGAN</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Relaxed fit denim jeans with distressing </a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>25.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-10.png" alt="Products">
+                                        <div class="discount">30% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-10.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Vintage wool peacoat (a type of short coat)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>44.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>66.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-12.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-12.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SUGAN</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Striped cotton t-shirt with crew neck (crew neck means)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>34.00</span>
+                                            <span class="price prev-price"><span class="currency">$</span>44.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-14.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-14.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">Lioness</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Floral print sundress with adjustable straps</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>50.00</span>
+                                            <span class="price prev-price"><span class="currency">$</span>94.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--=== Tab Pane  ===-->
+                        <div class="tab-pane fade" id="cat2">
+                            <!--=== Product Item Wrapper  ===-->
+                            <div class="products-item-wrapper">
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-9.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-9.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SUAGAN</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Relaxed fit denim jeans with distressing </a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>25.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-5.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-5.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-6.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-6.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Lightweight linen summer dress with belt</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>45.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>64.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-7.png" alt="Products">
+                                        <div class="discount">30% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-7.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">CARDIGO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Classic leather biker jacket with zippers</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>05.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-11.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-11.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">PLOTO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Adidas Sports With a slim design, a vibrant entertainment</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-8.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-18.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">CARDIGO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Vintage wool peacoat (a type of short coat)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>35.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>74.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-13.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-13.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">Lioness</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Sequins are shiny beads sewn on clothes</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-10.png" alt="Products">
+                                        <div class="discount">30% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-10.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Vintage wool peacoat (a type of short coat)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>44.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>66.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-12.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-12.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SUGAN</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Striped cotton t-shirt with crew neck (crew neck means)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>34.00</span>
+                                            <span class="price prev-price"><span class="currency">$</span>44.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-14.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-14.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">Lioness</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Floral print sundress with adjustable straps</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>50.00</span>
+                                            <span class="price prev-price"><span class="currency">$</span>94.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--=== Tab Pane  ===-->
+                        <div class="tab-pane fade" id="cat3">
+                            <!--=== Product Item Wrapper  ===-->
+                            <div class="products-item-wrapper">
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-11.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-11.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">PLOTO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Adidas Sports With a slim design, a vibrant entertainment</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-5.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-5.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Cozy women knit sweater with pockets </a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-6.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-6.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Lightweight linen summer dress with belt</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>45.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>64.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-7.png" alt="Products">
+                                        <div class="discount">30% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-7.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">CARDIGO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Classic leather biker jacket with zippers</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>05.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-8.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-18.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">CARDIGO</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Vintage wool peacoat (a type of short coat)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>35.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>74.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-13.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-13.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">Lioness</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Sequins are shiny beads sewn on clothes</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>15.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-9.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-9.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SUAGAN</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Relaxed fit denim jeans with distressing </a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>25.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>34.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-10.png" alt="Products">
+                                        <div class="discount">30% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-10.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SOFOLI</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Vintage wool peacoat (a type of short coat)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>44.60</span>
+                                            <span class="price prev-price"><span class="currency">$</span>66.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-12.png" alt="Products">
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-12.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">SUGAN</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Striped cotton t-shirt with crew neck (crew neck means)</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>34.00</span>
+                                            <span class="price prev-price"><span class="currency">$</span>44.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--=== Product Item  ===-->
+                                <div class="product-item style-three">
+                                    <div class="product-thumbnail">
+                                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/products/feature-product-14.png" alt="Products">
+                                        <div class="discount">20% Off</div>
+                                        <div class="hover-content">
+                                            <a href="#" class="icon-btn"><i class="fa fa-heart"></i></a>
+                                            <a href="#" class="cart-btn"><i class="far fa-shopping-basket"></i></a>
+                                            <a href="images/products/feature-product-14.png" class="img-popup icon-btn"><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-info-wrap">
+                                        <div class="product-info">
+                                            <div class="product-meta d-flex">
+                                                <span>Brand: <a href="#">Lioness</a></span>
+                                                <ul class="ratings rating4">
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                    <li><i class="fas fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="title"><a href="shop-details.php">Floral print sundress with adjustable straps</a></h4>
+                                        </div>
+                                        <div class="product-price">
+                                            <span class="price new-price"><span class="currency">$</span>50.00</span>
+                                            <span class="price prev-price"><span class="currency">$</span>94.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===== End Shop Products Section  ======-->
+    <!--===== Start Brand Section  ======-->
+    <section class="brand-section pt-125 pb-130">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="section-title text-center text-lg-start mb-50" data-aos="fade-right" data-aos-duration="1000">
+                        <!--=== Section Title  ===-->
+                        <h2>We continue to expand with <br> the trust of 10+ brand.</h2>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="brand-button float-lg-end d-none d-lg-block mb-60" data-aos="fade-left" data-aos-duration="1200">
+                        <a href="index-2.html"><img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/brand/brand-btn.png" alt="Button"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="brands-row">
+                <!--=== Brand Item  ===-->
+                <div class="single-brand-item" data-aos="fade-up" data-aos-duration="800">
+                    <a href="#" class="brand-img">
+                        <p>180</p>
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/brand/junaidjamshed.png" alt="Brand Image">
+                    </a>
+                </div>
+                <!--=== Brand Item  ===-->
+                <div class="single-brand-item" data-aos="fade-up" data-aos-duration="900">
+                    <a href="#" class="brand-img">
+                        <p>210</p>
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/brand/outfitters.png" alt="Brand Image">
+                    </a>
+                </div>
+                <!--=== Brand Item  ===-->
+                <div class="single-brand-item" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="#" class="brand-img">
+                        <p>50</p>
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/brand/gulahmedshop.svg" alt="Brand Image">
+                    </a>
+                </div>
+                <!--=== Brand Item  ===-->
+                <div class="single-brand-item" data-aos="fade-up" data-aos-duration="1100">
+                    <a href="#" class="brand-img">
+                        <p>840</p>
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/brand/khaadi.png" alt="Brand Image">
+                    </a>
+                </div>
+                <!--=== Brand Item  ===-->
+                <div class="single-brand-item" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="#" class="brand-img">
+                        <p>1101</p>
+                        <img src="http://samplelinkweb.site/custom-html/Libaasify/v3/images/brand/limelight.svg" alt="Brand Image">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--===== End Brand Section  ======-->
+    <!--====== Start Newsletter Section ======-->
+    <section class="newsletter-section">
+        <div class="newsletter-wrapper-two p-r z-1 pt-50 pb-55">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                        <div class="ps-post">
-                            <div class="ps-post__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/blog/1.jpg" /></div>
-                            <div class="ps-post__content">
-                                <a class="ps-post__title" href="blog-detail.php">An Inside Look at the Breaking2 Kit</a>
-                                <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Alena Studio</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further&hellip;</p>
-                                <a class="ps-morelink" href="blog-detail.php">Read more</a>
+                    <div class="col-xl-12">
+                        <div class="section-content-box" data-aos="fade-up" data-aos-duration="1000">
+                            <!--=== Section Title  ===-->
+                            <div class="section-title">
+                                <div class="sub-heading d-inline-flex align-items-center">
+                                    <i class="flaticon-sparkler"></i>
+                                    <span class="sub-title">Our Blogs</span>
+                                </div>
+                                <h2>Subscribe <span>newsletter</span> to & get Every day discount</h2>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                        <div class="ps-post">
-                            <div class="ps-post__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/blog/2.jpg" /></div>
-                            <div class="ps-post__content">
-                                <a class="ps-post__title" href="blog-detail.php">Unpacking the Breaking2 Race Strategy</a>
-                                <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Alena Studio</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further&hellip;</p>
-                                <a class="ps-morelink" href="blog-detail.php">Read more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
-                        <div class="ps-post">
-                            <div class="ps-post__thumbnail"><img alt="" src="https://tritact.co.uk/trueshoes/images/blog/3.jpg" /></div>
-                            <div class="ps-post__content">
-                                <a class="ps-post__title" href="blog-detail.php">Nike&rsquo;s Latest Football Cleat Breaks the Mold</a>
-                                <p class="ps-post__meta"><span>By:<a class="mr-5" href="blog.html">Alena Studio</a></span> -<span class="ml-5">Jun 10, 2017</span></p>
-                                <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further&hellip;</p>
-                                <a class="ps-morelink" href="blog-detail.php">Read more</a>
-                            </div>
+                            <form>
+                                <input type="email" class="form_control" placeholder="Write your Email Address" name="email" required>
+                                <button class="theme-btn style-one">Subscribe</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="ps-home-partner">
-        <div class="ps-container">
-            <div class="owl-slider" data-owl-auto="true" data-owl-dots="false" data-owl-duration="1000" data-owl-gap="40" data-owl-item="6" data-owl-item-lg="6" data-owl-item-md="5" data-owl-item-sm="4" data-owl-item-xs="2" data-owl-loop="true" data-owl-mousedrag="on" data-owl-nav="false" data-owl-speed="5000"><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/1.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/2.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/3.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/4.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/5.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/6.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/7.png" /></a><a href="#"><img alt="" src="https://tritact.co.uk/trueshoes/images/partner/8.png" /></a></div>
+    </section>
+    <!--====== End Newsletter Section ======-->
+    <!--====== Start Features Section ======-->
+    <section class="features-section pt-60 pb-35">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <!--=== Iconic Box Item ===-->
+                    <div class="iconic-box-item style-three mb-25" data-aos="fade-up" data-aos-duration="800">
+                        <div class="icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Free Shipping</h5>
+                            <p>You get your items delivered without any extra cost.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <!--=== Iconic Box Item ===-->
+                    <div class="iconic-box-item style-three mb-25" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Great Support 24/7</h5>
+                            <p>Our customer support team is available around the clock </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <!--=== Iconic Box Item ===-->
+                    <div class="iconic-box-item style-three mb-25" data-aos="fade-up" data-aos-duration="1200">
+                        <div class="icon">
+                            <i class="far fa-handshake"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Return Available</h5>
+                            <p>Making it easy to return any items if you're not satisfied.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <!--=== Iconic Box Item ===-->
+                    <div class="iconic-box-item style-three mb-25" data-aos="fade-up" data-aos-duration="1400">
+                        <div class="icon">
+                            <i class="fas fa-sack-dollar"></i>
+                        </div>
+                        <div class="content">
+                            <h5>Secure Payment</h5>
+                            <p>Shop with confidence knowing that our secure payment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="ps-home-contact">
-        <div id="contact-map" data-address="New York, NY" data-title="BAKERY LOCATION!" data-zoom="17" ></div>
-        <div class="ps-home-contact__form">
-            <header>
-                <h3>Contact Us</h3>
-                <p>Learn about our company profile, communityimpact, sustainable motivation, and more.</p>
-            </header>
-            <footer>
-                <form action="product-listing.php" method="post">
-                    <div class="form-group"><label>Name<span>*</span></label> <input class="form-control" type="text" /></div>
-                    <div class="form-group"><label>Email<span>*</span></label> <input class="form-control" type="email" /></div>
-                    <div class="form-group"><label>Your message<span>*</span></label><textarea class="form-control" rows="4"></textarea></div>
-                    <div class="form-group text-center"><button class="ps-btn">Send Message</button></div>
-                </form>
-            </footer>
-        </div>
-    </div>
+    </section>
+    <!--====== End Features Section ======-->
+</main>
 @endsection

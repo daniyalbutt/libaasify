@@ -82,7 +82,7 @@
                                                     @foreach ($category as $item)
                                                         <option
                                                             {{ $data != null ? ($data->category_id == $item->id ? 'selected' : '') : '' }}
-                                                            value="{{ $item->id }}">{{ $item->name }}</option>
+                                                            value="{{ $item->id }}">{!! $item->getParentsNames() !!}</option>
                                                     @endforeach
 
                                                 </select>
@@ -104,7 +104,7 @@
                                     <!--/row-->
                                     <!--/row-->
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Price</label>
                                                 <div class="input-group">
@@ -119,8 +119,21 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="font-weight-700 font-size-16">Cut Price</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-addon"><i class="ti-money"></i></div>
+
+                                                    <input type="number" id="cut_price" name="cut_price" step="0.01"
+                                                        value="{{ $data == null ? old('cut_price') : $data->cut_price }}"
+                                                        class="form-control" placeholder="270.00">
+                                                    <span id="priceerror" class="d-none error-span "></span>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!--/span-->
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Discount</label>
                                                 <div class="input-group">
@@ -133,7 +146,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="font-weight-700 font-size-16">Stock (in units)</label>
                                                 <div class="input-group">
@@ -192,7 +205,7 @@
                                                     <option value="">Select Default Color</option>
                                                     @foreach($attribute_value as $key => $value)
                                                     <option value="{{ $value->name }}"
-                                                        {{ $data != null ? ($data->default_color == $value->name ? 'selected' : '') : '' }}
+                                                        {{ $data != null ? (strtoupper($data->default_color) == $value->name ? 'selected' : '') : '' }}
                                                     >{{ $value->name }}</option>
                                                     @endforeach
                                                 </select>
@@ -279,8 +292,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="font-weight-700 font-size-16">Product
-                                                    Short Description</label>
+                                                <label class="font-weight-700 font-size-16">Product Short Description</label>
                                                 <textarea value={{ $data == null ? old('short_desc') : $data->short_desc }} id="short_desc" name="short_desc"
                                                     class="editor" required>{{ $data == null ? old('short_desc') : $data->short_desc }}</textarea>
                                                 <span id="short_descerror" class="d-none error-span"></span>
@@ -297,7 +309,10 @@
                                                 <textarea value={{ $data == null ? old('description') : $data->description }} id="description" name="description"
                                                     class="editor" required>{{ $data == null ? old('description') : $data->description }}</textarea>
                                                 <span id="descriptionerror" class="d-none error-span"></span>
-
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Product Link</label>
+                                                <input type="text" disabled value="{{ $data == null ? old('product_link') : $data->product_link }}" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -506,11 +521,11 @@
         if (Object.keys(productImages).length > 0) {
             productImages.forEach(function(obj, index) {
 
-                urls.push(window.location.origin + '/' + obj);
+                urls.push(window.location.origin + obj);
 
                 initialPreviewConfig.push({
                     caption: obj.split('/').slice(-1)[0],
-                    downloadUrl: window.location.origin + '/' + obj,
+                    downloadUrl: window.location.origin + obj,
                     url: "{{ route('product.delete_img') }}",
                     key: '{{ $data ? $data->id : '0' }}',
                     extra: {
@@ -701,7 +716,7 @@
                 initialPreviewAsData = false;
                 if (Object.keys(get_images).length > 0) {
                     get_images.forEach(function(obj, index) {
-                        urls.push(window.location.origin + '/' + obj);
+                        urls.push(window.location.origin + obj);
                         initialPreviewConfig.push({
                             caption: obj.split('/').slice(-1)[0],
                             downloadUrl: window.location.origin + '/' + obj,

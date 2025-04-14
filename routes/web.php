@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\{
     ProductController,
     CategoryController,
     CustomerController,
+    ScrapperController,
     PermissionsController,
     PageController,
     InquiryController,
@@ -42,7 +43,7 @@ use App\Models\{Inquiry, Vehicle};
 Auth::routes();
 
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/{slug?}', [HomeController::class, 'index'])->name('home');
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('blogs', [HomeController::class, 'blogs'])->name('blogs');
@@ -130,6 +131,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'isAdmin']], functio
 
     // Customer
     Route::resource('customer', CustomerController::class);
+    Route::resource('scrapper', ScrapperController::class);
 
     require_once('crudweb.php');
 });
@@ -146,7 +148,7 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' =>  ['auth', 'is
 
 Route::group(['as' => 'product.'], function () {
     Route::get('shop', [CartController::class, 'shop'])->name('shop');
-    Route::get('collections/{slug}', [CartController::class, 'shopBySlug'])->name('shop.slug');
+    Route::get('collections/{category}/{slug}', [CartController::class, 'shopBySlug'])->name('shop.slug');
     Route::get('{category}/product/{slug}',[CartController::class, 'detail'])->name('detail');
     Route::get('checkout',[CartController::class, 'checkout'])->name('checkout');
     Route::post('payment',[CartController::class, 'payment'])->name('payment');

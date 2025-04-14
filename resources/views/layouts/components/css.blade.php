@@ -1,18 +1,12 @@
-<!-- Fonts-->
-<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet" />
-<link href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/ps-icon/style.css') }}" rel="stylesheet" />
-<!-- CSS Library-->
-<link href="{{ asset('plugins/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/owl-carousel/assets/owl.carousel.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/slick/slick/slick.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/Magnific-Popup/dist/magnific-popup.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/jquery-ui/jquery-ui.min.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/revolution/css/settings.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/revolution/css/layers.css') }}" rel="stylesheet" />
-<link href="{{ asset('plugins/revolution/css/navigation.css') }}" rel="stylesheet" />
-<!-- Custom-->
-<link href="{{ asset('front/css/style.css') }}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('front/css/flaticon_pesco.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/slick.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/nice-select.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/magnific-popup.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/jquery-ui.min.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/aos.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/default.css') }}">
+<link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/css/jquery.toast.css') }}">

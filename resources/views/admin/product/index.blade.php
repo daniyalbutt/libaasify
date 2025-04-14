@@ -1,6 +1,11 @@
 @extends('admin.layouts.app')
 @section('title', 'Product List')
 @section('content')
+<style>
+    span.badge.badge-primary.text-white a {
+        color: white;
+    }
+</style>
     <div class="container-full">
         <div class="content-header">
             <div class="d-flex align-items-center">
@@ -26,6 +31,11 @@
                         <h4 class="card-title">Product Lists</h4>
                     </div>
                     <div class="col-md-6">
+                        <form action="">
+                            <select name="" id="" class="form-control">
+                                <option value="">Select Category</option>
+                            </select>
+                        </form>
                         <form method="get" action="{{ route('product.index') }}">
                             <div class="input-group">
                                 <input type="search" id="search" class="form-control" placeholder="Search"
@@ -68,10 +78,13 @@
                                 </div>
                                 <div class="fx-card-content text-left mb-0">
                                     <div class="product-text">
-                                        <h4 class="box-title mb-0">{{ $product->name }} - {{ $product->sku }}</h4>
-                                        <h2 class="pro-price text-blue">${{ $product->price }}</h2>
+                                        <h4 class="box-title mb-0" style="font-size: 17px;">{{ \Illuminate\Support\Str::limit($product->name, 26, $end='.') }}</h4>
+                                        <div class="text-right">
+                                            <span class="badge badge-primary badge-sm text-white" style="color:white">{!! $product->category->getParentsNames() !!}</span>
+                                            <span class="badge badge-info badge-sm">{{ $product->product_website }}</span>
+                                        </div>
+                                        <h2 class="pro-price text-blue">${{ $product->price }} <span style="text-decoration: line-through;">${{ $product->cut_price }}</span> <span style="font-size: 13px;font-weight: bold;">{{ $product->off_percentage }}</span></h2>
                                     </div>
-                                    <!-- <p class="text-muted db productdesc">{!! Str::limit($product->short_desc, 490) !!}</p> -->
                                 </div>
                             </div>
                         </div>
@@ -81,9 +94,9 @@
 
             </div>
 
-            <div id="pagination">
-                {{-- {{ $data->links("pagination::custom-pagination") }} --}}
-                <div id="pagination">
+            <div id="pagination" class="pagination">
+                {{ $data->links("pagination::custom-pagination") }}
+            </div>
         </section>
     </div>
 @endsection

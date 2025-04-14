@@ -38,7 +38,7 @@
 	                            		<select name="parent_id" class="form-control">
 	                            			<option value="0">Parent Category</option>
 	                            			@foreach($category as $key => $value)
-	                            			<option value="{{ $value->id }}" {{ ($data != null) && ($data->parent_id == $value->id) ? 'selected' : ' ' }}>{{ $value->name }}</option>
+	                            			<option value="{{ $value->id }}" {{ ($data != null) && ($data->parent_id == $value->id) ? 'selected' : ' ' }}>{!! $value->getParentsNames() !!}</option>
 	                            			@endforeach
 	                            		</select>
 	                            	</div>

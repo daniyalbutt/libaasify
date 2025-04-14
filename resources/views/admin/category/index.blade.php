@@ -1,6 +1,11 @@
 @extends('admin.layouts.app')
 @section('title', 'Category List')
 @section('content')
+<style>
+	span.badge.badge-info a {
+		color: white;
+	}
+</style>
 <div class="container-full">
 	<div class="content-header">
 	    <div class="d-flex align-items-center">
@@ -47,7 +52,7 @@
 			            @if($value->parent_id == 0)
 			            <span class="badge badge-info">Parent Category</span>
 			            @else
-			            <span class="badge badge-info">{{ $value->parent->name }}</span>
+			            <span class="badge badge-info">{!! $value->getParentsNames() !!}</span>
 			            @endif
 			            <p class="card-text">{{ \Illuminate\Support\Str::limit(strip_tags($value->description), 90, $end='...') }}</p>
 			        </div>

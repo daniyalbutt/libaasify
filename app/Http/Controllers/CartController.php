@@ -19,10 +19,10 @@ class CartController extends Controller
         return view('shop.shop', compact('products','category'));
     }
 
-	public function shopBySlug($slug){
+	public function shopBySlug($category, $slug){
 		$get_category = Category::where('slug', $slug)->first();
-        $products = Product::where('category_id', $get_category->id)->paginate(10);
-        $category = Category::all();
+        $products = Product::where('category_id', $get_category->id)->paginate(45);
+        $category = Category::where('slug', $category)->first();
         return view('shop.shop', compact('products','category', 'get_category'));
     }
 

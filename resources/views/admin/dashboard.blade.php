@@ -11,7 +11,7 @@
                         </h4>
                     </div>
                     <div class="box-body pt-0 box-dashboard">
-                        <div class="mb-5">
+                        <div class="mb-5 dashboard-logo">
                             <img class="rounded img-fluid" src="{{ asset($logo) }}" alt="">
                         </div>
                         <div class="info-content">

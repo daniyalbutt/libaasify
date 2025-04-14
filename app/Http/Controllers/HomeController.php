@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Models\{Comment,Category, Product, Page, Blog, Faq};
+use Session;
 
 class HomeController extends Controller
 {
@@ -22,13 +23,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($slug = 1)
     {
+        Session::put('category', $slug);
         $categories = Category::where('parent_id',0)->get();
         $trendingProducts = Product::where('trending',1)->get();
         $dealProducts = Product::where('deals',1)->get();
         $page = Page::where('slug','home')->first();
-        return view('welcome', compact('categories','trendingProducts','dealProducts','page'));
+        $get_category = Category::where('slug', $slug)->first();
+        if($get_category == null){
+            Session::put('category', 1);
+        }else{
+            Session::put('category', $get_category->id);
+        }
+        return view('welcome', compact('categories','trendingProducts','dealProducts','page', 'get_category'));
     }
 
     public function about()

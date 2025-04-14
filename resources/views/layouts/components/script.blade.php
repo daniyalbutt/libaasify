@@ -1,27 +1,13 @@
-<!-- JS Library-->
-<script type="text/javascript" src="{{ asset('plugins/jquery/dist/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/jquery-bar-rating/dist/jquery.barrating.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/owl-carousel/owl.carousel.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/gmap3.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/imagesloaded.pkgd.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/isotope.pkgd.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/jquery.matchHeight-min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/slick/slick/slick.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/elevatezoom/jquery.elevatezoom.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/jquery.themepunch.tools.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/jquery.themepunch.revolution.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('plugins/revolution/js/extensions/revolution.extension.actions.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="{{ asset('front/js/main.js') }}"></script>
+<script src="{{ asset('front/js/jquery-3.7.1.min.js') }}"></script>
+<script src="{{ asset('front/js/popper.min.js') }}"></script>
+<script src="{{ asset('front/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('front/js/slick.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery.nice-select.min.js') }}"></script>
+<script src="{{ asset('front/js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('front/js/simplyCountdown.min.js') }}"></script>
+<script src="{{ asset('front/js/aos.js') }}"></script>
+<script src="{{ asset('front/js/theme.js') }}"></script>
 
 <script src="{{ asset('admin/js/toastr.js') }}"></script>
 <script src="{{ asset('admin/js/script.js') }}"></script>

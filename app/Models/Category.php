@@ -49,4 +49,12 @@ class Category extends Model
 	    }
 	}
 
+    public function getParentsNamesShop(){
+        if($this->parent) {
+            return '<li><a href="#">'.$this->parent->getParentsNamesShop().'</a></li><li><i class="far fa-long-arrow-right"></i></li><li><a href="#">'.$this->name.'</a></li>';
+	    } else {
+	        return '<li><i class="far fa-long-arrow-right"></i></li><li><a href="#">'.$this->name.'</a></li>';
+	    }
+    }
+
 }

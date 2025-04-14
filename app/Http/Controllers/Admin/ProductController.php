@@ -33,6 +33,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+        $category = Category->orderBy('id', 'desc')->get();
         $search = $request->search;
         $data = new Product();
 
@@ -46,13 +47,13 @@ class ProductController extends Controller
             foreach ($columns as $column) {
                 $query->orWhere($column, 'LIKE', '%' . $search . '%');
             }
-            $data = $query->orderBy('name')->paginate(12);
+            $data = $query->orderBy('name')->paginate(30);
 
             if ($request->onChange == true) {
                 return response()->json(['status' => true, 'data' => $data, 'lastPage' => $data->lastPage()]);
             }
         } else {
-            $data = $data->paginate(12);
+            $data = $data->orderBy('id', 'desc')->paginate(30);
             if ($request->onChange == true) {
                 return response()->json(['status' => true, 'data' => $data, 'lastPage' => $data->lastPage()]);
             }
@@ -72,7 +73,7 @@ class ProductController extends Controller
         $data = null;
         $attributes = Attribute::all();
         $attribute_value = AttributeValue::whereHas('attribute', function($q){
-            $q->where('slug', 'color');
+            $q->where('slug', 'colors');
         })->get();
         return view("admin.product.create", compact('data', 'attributes', 'attribute_value'));
     }
@@ -167,7 +168,7 @@ class ProductController extends Controller
             $data = Product::find($id);
             $attributes = Attribute::all();
             $attribute_value = AttributeValue::whereHas('attribute', function($q){
-                $q->where('slug', 'color');
+                $q->where('slug', 'colors');
             })->get();
             return view('admin.product.create', compact('data', 'attributes', 'attribute_value'));
         }

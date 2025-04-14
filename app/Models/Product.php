@@ -14,7 +14,7 @@ class Product extends Model
 {
     use HasFactory, Sluggable;
 
-    protected $fillable = ['name', 'price', 'category_id', 'image', 'images', 'discount', 'slug', 'short_desc', 'description', 'featured', 'status', 'stock', 'trending', 'deals', 'sku', 'new_product', 'default_color'];
+    protected $fillable = ['name', 'price', 'category_id', 'image', 'images', 'discount', 'slug', 'short_desc', 'description', 'featured', 'status', 'stock', 'trending', 'deals', 'sku', 'new_product', 'default_color', 'product_link', 'product_website', 'cut_price', 'off_percentage'];
 
     /**
      * Get the product images path in json.
