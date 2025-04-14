@@ -10,6 +10,7 @@ use App\Http\Requests\ProductRequest;
 use DB;
 use File;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
 use App\Models\AttributeValueProduct;
@@ -33,7 +34,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-        $category = Category->orderBy('id', 'desc')->get();
+        $category = Category::orderBy('id', 'desc')->get();
         $search = $request->search;
         $data = new Product();
 
